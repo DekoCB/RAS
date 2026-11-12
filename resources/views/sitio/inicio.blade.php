@@ -412,7 +412,7 @@
                             Será la Historia la que Ganará!!
                         </p>
                         <p>
-                            Tu nombre REALINO puesta a gran altura<br>
+                            Tu nombre R.A.S puesta a gran altura<br>
                             para que nos pueda guiar, alumbrando<br>
                             Por el valle oscuro, aunque sea dura<br>
                             ¡No temeré! A la cumbre sabemos llegar
