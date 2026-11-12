@@ -1,0 +1,155 @@
+/* ============================================================
+   Identidad institucional - IEP REAL SCHOOL
+   Paleta tomada del escudo R.A.S: rojo + azul marino.
+   Este archivo solo pinta el "chrome" compartido (marca, header,
+   sidebar, foco). No toca los colores propios de cada modulo.
+   ============================================================ */
+
+:root {
+  /* Rojo del escudo (cuartos superior izquierdo e inferior derecho) */
+  --rs-gold-100: #fde4e0;
+  --rs-gold-300: #f5a097;
+  --rs-gold-400: #ef6355;
+  --rs-gold-500: #e83222;
+  --rs-gold-600: #c42415;
+  --rs-gold-700: #9c1a0e;
+
+  /* Azul marino del escudo (cuartos y borde) */
+  --rs-navy-100: #e4e7f3;
+  --rs-navy-600: #2a3a8c;
+  --rs-navy-700: #1a2766;
+  --rs-navy-800: #141d52;
+  --rs-navy-900: #0f1742;
+  --rs-navy-950: #090e2b;
+
+  /* Granate del fondo del logo */
+  --rs-maroon: #60282b;
+
+  /* Alias institucionales */
+  --rs-primary: var(--rs-navy-700);
+  --rs-accent: var(--rs-gold-500);
+  --rs-on-dark: #ffffff;
+}
+
+/* ---------- Bloque de marca en el sidebar ---------- */
+
+.pc-sidebar .m-header .b-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.pc-sidebar .m-header .b-logo {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 2px;
+  box-shadow: 0 0 0 1.5px var(--rs-gold-500), 0 4px 12px rgba(15, 22, 69, 0.28);
+}
+
+.pc-sidebar .m-header .b-brand .b-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.pc-sidebar .m-header .b-brand .b-title small {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--rs-gold-400);
+}
+
+/* Filo dorado bajo la cabecera del sidebar (todos los roles) */
+.pc-sidebar .m-header {
+  border-bottom: 1px solid rgba(232, 50, 34, 0.35);
+  box-shadow: 0 1px 0 rgba(232, 50, 34, 0.18);
+}
+
+/* En sidebar colapsado solo queda el escudo */
+.pc-sidebar.pc-sidebar-hide .m-header .b-title,
+body[data-pc-sidebar-collapse="true"] .pc-sidebar .m-header .b-title {
+  display: none;
+}
+
+/* ---------- Header ---------- */
+
+.pc-header {
+  border-bottom: 1px solid var(--rs-navy-100);
+  box-shadow: 0 8px 24px rgba(15, 22, 69, 0.07);
+}
+
+.pc-header .header-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rs-navy-700), var(--rs-gold-500) 55%, var(--rs-gold-300));
+  opacity: 0.9;
+}
+
+.pc-header .header-wrapper {
+  position: relative;
+}
+
+/* ---------- Marca en login / vistas de invitado ---------- */
+
+.auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.auth-brand__logo {
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 0 0 2px var(--rs-gold-500), 0 10px 26px rgba(9, 14, 43, 0.45);
+}
+
+.auth-hero__pill {
+  border-color: rgba(232, 50, 34, 0.5) !important;
+  color: var(--rs-gold-300) !important;
+  background: rgba(232, 50, 34, 0.12) !important;
+}
+
+.auth-stat__num {
+  color: var(--rs-gold-400) !important;
+}
+
+/* ---------- Acentos institucionales compartidos ---------- */
+
+.rs-gold {
+  color: var(--rs-gold-500);
+}
+
+.rs-navy {
+  color: var(--rs-navy-700);
+}
+
+.rs-rule {
+  height: 3px;
+  border: 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--rs-navy-700), var(--rs-gold-500));
+}
+
+@media print {
+  .pc-header .header-wrapper::after {
+    display: none;
+  }
+}

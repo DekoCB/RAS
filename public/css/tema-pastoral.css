@@ -1,0 +1,71 @@
+/* ==========================================================================
+   TEMA - Modulo 11, Pastoral
+   Identidad: recogimiento. Azul profundo, cabecera rematada en arco y
+   tipografia serif, con luz difusa desde arriba. Formas verticales y
+   simetricas, distintas del resto del sistema.
+   ========================================================================== */
+
+body.tema-pastoral {
+  --mod-navy-900: #10163d;
+  --mod-navy-800: #161e4f;
+  --mod-navy-700: #1c2560;
+  --mod-blue-600: #212c71;
+  --mod-blue-500: #293581;
+  --mod-sky-500: #9aa4e0;
+  --mod-sky-400: #bcc3ee;
+  --mod-surface: #f6f7fd;
+  --mod-line: #e0e4f2;
+}
+
+/* Cifras en columnas simetricas, con remate superior en arco */
+body.tema-pastoral .mod-stat {
+  border-left: none;
+  border-radius: 40px 40px 12px 12px;
+  text-align: center;
+  padding: 26px 20px 20px;
+  border: 1px solid var(--mod-line);
+  border-top: 4px solid var(--mod-blue-600);
+}
+
+body.tema-pastoral .mod-stat.s2 { border-top-color: var(--mod-sky-500); }
+body.tema-pastoral .mod-stat.s3 { border-top-color: #16a34a; }
+body.tema-pastoral .mod-stat.s4 { border-top-color: var(--mod-navy-700); }
+
+body.tema-pastoral .mod-stat__num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.85rem;
+  color: var(--mod-navy-800);
+}
+
+body.tema-pastoral .mod-card {
+  border-radius: 18px;
+}
+
+body.tema-pastoral .mod-card__head {
+  background: var(--mod-surface);
+  text-align: left;
+}
+
+body.tema-pastoral .mod-card__head h5 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+}
+
+body.tema-pastoral .mod-table thead th {
+  background: var(--mod-surface);
+  border-bottom: 2px solid var(--mod-blue-600);
+}
+
+body.tema-pastoral .mod-chip {
+  border-radius: 999px;
+  background: #e6eafb;
+  color: var(--mod-navy-700);
+}
+
+body.tema-pastoral .mod-btn {
+  border-radius: 999px;
+}
+
+body.tema-pastoral .mod-btn-ghost {
+  border-radius: 999px;
+}

@@ -1,0 +1,69 @@
+/* ==========================================================================
+   TEMA - Datos institucionales y Sedes
+   Identidad: lo civico y protocolar. Azul marino profundo, doble filete y
+   cabecera centrada, como la portada de un documento oficial.
+   ========================================================================== */
+
+body.tema-institucion {
+  --mod-navy-900: #0b1133;
+  --mod-navy-800: #101849;
+  --mod-navy-700: #131d58;
+  --mod-blue-600: #172269;
+  --mod-blue-500: #1a2677;
+  --mod-sky-500: #2a3686;
+  --mod-sky-400: #98a1dc;
+  --mod-surface: #f5f8fc;
+  --mod-line: #dae3ee;
+}
+
+/* Paneles con esquina cuadrada y encabezado con numeracion romana */
+body.tema-institucion .mod-card {
+  border-radius: 6px;
+  border-top: 3px solid var(--mod-navy-800);
+}
+
+body.tema-institucion .mod-card__head {
+  background: #fff;
+  border-bottom: 1px solid var(--mod-line);
+}
+
+body.tema-institucion .mod-card__head h5 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  letter-spacing: .01em;
+}
+
+body.tema-institucion .mod-stat {
+  border-radius: 6px;
+  border-left: none;
+  border-top: 4px solid var(--mod-blue-600);
+  text-align: center;
+}
+
+body.tema-institucion .mod-stat.s2 { border-top-color: var(--mod-sky-500); }
+body.tema-institucion .mod-stat.s3 { border-top-color: #16a34a; }
+body.tema-institucion .mod-stat.s4 { border-top-color: var(--mod-navy-700); }
+
+body.tema-institucion .mod-stat__num {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body.tema-institucion .mod-table thead th {
+  background: var(--mod-navy-800);
+  color: #fff;
+  border-bottom: none;
+}
+
+body.tema-institucion .mod-chip {
+  border-radius: 3px;
+  background: #e6eef8;
+  color: var(--mod-navy-800);
+}
+
+body.tema-institucion .mod-btn,
+body.tema-institucion .mod-btn-ghost {
+  border-radius: 4px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: .78rem;
+}

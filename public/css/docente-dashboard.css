@@ -1,0 +1,826 @@
+/* =====================================================
+   DOCENTE DASHBOARD — REYSCHOOL
+   Paleta: Rojo → Naranja  |  2026
+   ===================================================== */
+
+body.role-docente {
+  --doc-blue-950:    #0d133b;
+  --doc-blue-800:    #162061;
+  --doc-blue-700:    #1c297e;
+  --doc-sky-900: #1d2a82;
+  --doc-sky-700: #213196;
+  --doc-sky-500: #23339e;
+  --doc-sky-400: #26369f;
+  --doc-gradient:   linear-gradient(135deg, #1c297e 0%, #213196 60%, #23339e 100%);
+  --doc-gradient-r: linear-gradient(135deg, #23339e 0%, #213196 40%, #1c297e 100%);
+  --doc-gradient-blue: linear-gradient(135deg, #1c297e 0%, #162061 100%);
+  --doc-soft-bg:    #f5faff;
+  --doc-border:     #d4ecfd;
+  --doc-ink:        #1c1917;
+  --doc-muted:      #6b7280;
+  --doc-shadow-sm:  0 4px 14px rgba(33, 49, 150,.08);
+  --doc-shadow:     0 12px 32px rgba(33, 49, 150,.13);
+  --doc-shadow-lg:  0 24px 48px rgba(33, 49, 150,.18);
+  --doc-radius:     20px;
+  --doc-radius-sm:  12px;
+  font-family: "Manrope", sans-serif;
+  background: var(--doc-soft-bg);
+}
+
+body.role-docente ::-webkit-scrollbar { width: 6px; }
+body.role-docente ::-webkit-scrollbar-track { background: transparent; }
+body.role-docente ::-webkit-scrollbar-thumb { background: #d1d7fc; border-radius: 6px; }
+
+body.role-docente .pc-container { background: transparent; }
+
+/* ══════════════════════════════════════════════════
+   SIDEBAR
+══════════════════════════════════════════════════ */
+body.role-docente .pc-sidebar {
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(35, 51, 158,.22) 0%, transparent 50%),
+    linear-gradient(180deg, var(--doc-blue-950) 0%, #10184a 50%, var(--doc-blue-800) 100%);
+  box-shadow: 16px 0 40px rgba(15, 21, 60,.35);
+  border-right: 1px solid rgba(255,255,255,.07);
+}
+body.role-docente .pc-sidebar .m-header {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  padding-bottom: 14px;
+  margin-bottom: 4px;
+}
+body.role-docente .pc-sidebar .b-brand { color: #fff; gap: 10px; }
+body.role-docente .pc-sidebar .pc-caption {
+  color: rgba(255,255,255,.45);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: .68rem;
+  font-weight: 800;
+}
+body.role-docente .pc-sidebar .pc-link {
+  color: rgba(255,255,255,.88);
+  border-radius: var(--doc-radius-sm);
+  margin: 3px 10px;
+  padding: 11px 14px;
+  transition: all .22s ease;
+}
+body.role-docente .pc-sidebar .pc-micon {
+  width: 28px; height: 28px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  background: rgba(255,255,255,.1);
+}
+body.role-docente .pc-sidebar .pc-item.active > .pc-link {
+  background: linear-gradient(135deg, rgba(35, 51, 158,.28), rgba(255,255,255,.12));
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(35, 51, 158,.3);
+}
+body.role-docente .pc-sidebar .pc-item.active > .pc-link .pc-micon {
+  background: var(--doc-gradient);
+  box-shadow: 0 4px 10px rgba(33, 49, 150,.35);
+}
+body.role-docente .pc-sidebar .pc-link:hover {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  transform: translateX(3px);
+}
+body.role-docente .pc-sidebar .pc-link:hover .pc-micon {
+  background: rgba(35, 51, 158,.25);
+}
+
+/* ── Submenu ── */
+body.role-docente .pc-sidebar .pc-submenu {
+  padding: 4px 10px 8px 10px;
+  margin: 0;
+  list-style: none;
+  overflow: hidden;
+  position: relative;
+}
+/* vertical connecting line */
+body.role-docente .pc-sidebar .pc-submenu::before {
+  content: '';
+  position: absolute;
+  left: 32px;
+  top: 0;
+  bottom: 10px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(35, 51, 158,.5), rgba(35, 51, 158,.06));
+  pointer-events: none;
+}
+body.role-docente .pc-sidebar .pc-submenu .pc-link {
+  padding: 9px 14px 9px 44px;
+  margin: 2px 0;
+  font-size: .82rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.7) !important;
+  border-radius: 10px;
+  position: relative;
+  transform: none;
+  transition: all .2s ease;
+}
+/* bullet dot */
+body.role-docente .pc-sidebar .pc-submenu .pc-link::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(35, 51, 158,.4);
+  border: 1.5px solid rgba(35, 51, 158,.55);
+  transition: all .2s ease;
+}
+body.role-docente .pc-sidebar .pc-submenu .pc-link:hover {
+  background: rgba(35, 51, 158,.18);
+  color: #fff !important;
+  transform: translateX(4px);
+}
+body.role-docente .pc-sidebar .pc-submenu .pc-link:hover::before {
+  background: var(--doc-sky-500);
+  border-color: var(--doc-sky-400);
+  box-shadow: 0 0 7px rgba(35, 51, 158,.55);
+}
+body.role-docente .pc-sidebar .pc-submenu .pc-item.active .pc-link {
+  background: linear-gradient(135deg, rgba(35, 51, 158,.28), rgba(255,255,255,.1));
+  color: #26369f !important;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px rgba(35, 51, 158,.3);
+}
+body.role-docente .pc-sidebar .pc-submenu .pc-item.active .pc-link::before {
+  background: var(--doc-sky-500);
+  border-color: transparent;
+  box-shadow: 0 0 8px rgba(35, 51, 158,.65);
+}
+/* Arrow: rotate when submenu is open */
+body.role-docente .pc-sidebar .pc-arrow {
+  transition: transform .25s ease;
+  opacity: .65;
+}
+body.role-docente .pc-sidebar .pc-item.pc-hasmenu.pc-trigger > .pc-link .pc-arrow {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+/* Parent item highlight when open */
+body.role-docente .pc-sidebar .pc-item.pc-hasmenu.pc-trigger > .pc-link {
+  background: rgba(35, 51, 158,.15);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(35, 51, 158,.22);
+}
+body.role-docente .pc-sidebar .pc-item.pc-hasmenu.pc-trigger > .pc-link .pc-micon {
+  background: var(--doc-gradient);
+  box-shadow: 0 4px 10px rgba(33, 49, 150,.3);
+}
+
+/* ── Sidebar Perfil ── */
+.doc-sb-profile {
+  display: flex; align-items: center; gap: 11px;
+  padding: 14px 16px;
+  margin: 8px 10px 4px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(4px);
+}
+.doc-sb-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(35, 51, 158,.6);
+  flex-shrink: 0;
+}
+.doc-sb-avatar-placeholder {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--doc-gradient);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: .95rem;
+  flex-shrink: 0;
+  border: 2px solid rgba(35, 51, 158,.5);
+}
+.doc-sb-name {
+  font-size: .82rem; font-weight: 700; color: #fff;
+  margin: 0 0 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  max-width: 130px;
+}
+.doc-sb-role {
+  font-size: .68rem; font-weight: 600;
+  color: rgba(38, 54, 159,.95);
+  display: inline-flex; align-items: center; gap: 4px;
+  background: rgba(35, 51, 158,.18);
+  border: 1px solid rgba(35, 51, 158,.3);
+  padding: 2px 8px; border-radius: 999px;
+}
+.doc-sb-role i { width: 10px; height: 10px; }
+.doc-sb-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+  margin: 8px 16px;
+}
+.doc-sb-logout { margin: 4px 10px 14px !important; }
+.doc-sb-logout .pc-link {
+  color: rgba(204, 210, 254,.9) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(35, 51, 158,.2) !important;
+  margin: 0 !important;
+  transition: background .2s ease, border-color .2s ease !important;
+}
+.doc-sb-logout .pc-link:hover {
+  background: rgba(33, 49, 150,.25) !important;
+  border-color: rgba(35, 51, 158,.4) !important;
+  color: #ccd2fe !important;
+  transform: none !important;
+}
+.doc-sb-logout .pc-micon {
+  background: rgba(33, 49, 150,.2) !important;
+  color: #ccd2fe !important;
+}
+.doc-sb-footer {
+  padding: 10px 16px 16px;
+  font-size: .68rem; color: rgba(255,255,255,.3);
+  text-align: center; line-height: 1.5;
+}
+.doc-sb-footer span {
+  display: inline-block;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 999px; padding: 4px 12px;
+}
+
+/* ══════════════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════════════ */
+body.role-docente .pc-header {
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #d4ecfd;
+  box-shadow: 0 8px 24px rgba(33, 49, 150,.07);
+}
+body.role-docente .pc-header .header-search input {
+  border: 1px solid #d1d7fc;
+  border-radius: 999px; padding-left: 2.2rem;
+}
+body.role-docente .pc-header .pc-head-link { border-radius: 12px; transition: all .2s ease; }
+body.role-docente .pc-header .pc-head-link:hover { background: rgba(33, 49, 150,.08); }
+body.role-docente .pc-header .user-avtar img {
+  border-radius: 50%;
+  border: 2.5px solid rgba(33, 49, 150,.3);
+}
+body.role-docente .page-header-title h5 { font-weight: 800; color: var(--doc-ink); }
+body.role-docente .breadcrumb-item,
+body.role-docente .breadcrumb-item a { color: var(--doc-muted); font-weight: 500; }
+
+/* ══════════════════════════════════════════════════
+   CARDS BASE
+══════════════════════════════════════════════════ */
+body.role-docente .card {
+  border-radius: var(--doc-radius);
+  border: 1px solid var(--doc-border);
+  box-shadow: var(--doc-shadow-sm);
+}
+body.role-docente .card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--doc-border);
+  padding: 18px 22px 14px;
+}
+body.role-docente .card-body { padding: 20px 22px; }
+
+/* ══════════════════════════════════════════════════
+   HERO BANNER
+══════════════════════════════════════════════════ */
+.doc-hero {
+  border-radius: var(--doc-radius);
+  overflow: hidden;
+  position: relative;
+  background: var(--doc-gradient);
+  box-shadow: var(--doc-shadow-lg);
+  border: none;
+}
+.doc-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(255,255,255,.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(0,0,0,.12) 0%, transparent 40%);
+  pointer-events: none;
+}
+.doc-hero::after {
+  content: '';
+  position: absolute;
+  right: -60px; top: -60px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  pointer-events: none;
+}
+.doc-hero__inner {
+  position: relative; z-index: 1;
+  padding: 28px 32px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.doc-hero__left { display: flex; align-items: center; gap: 18px; }
+.doc-hero__logo {
+  width: 62px; height: 62px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.2);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.3);
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 8px; flex-shrink: 0;
+}
+.doc-hero__logo img { width: 100%; height: 100%; object-fit: contain; }
+.doc-hero__school {
+  font-size: .8rem; font-weight: 600;
+  color: rgba(255,255,255,.75); margin: 0 0 2px;
+}
+.doc-hero__welcome {
+  font-size: clamp(1.2rem, 2vw + .5rem, 1.7rem);
+  font-weight: 900; color: #fff; margin: 0 0 6px;
+  text-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.doc-hero__sub { font-size: .87rem; color: rgba(255,255,255,.8); margin: 0; }
+.doc-hero__right {
+  display: flex; flex-direction: column;
+  align-items: flex-end; gap: 10px;
+}
+.doc-hero__pills { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.doc-hero__pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.2);
+  color: #fff; padding: 7px 14px;
+  border-radius: 999px; font-size: .78rem; font-weight: 700;
+}
+.doc-hero__pill i { width: 14px; height: 14px; }
+.doc-hero__pill.is-light {
+  background: rgba(255,255,255,.2);
+  border-color: rgba(255,255,255,.35);
+}
+
+/* ══════════════════════════════════════════════════
+   KPI CARDS
+══════════════════════════════════════════════════ */
+.doc-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1100px) { .doc-kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px)  { .doc-kpi-grid { grid-template-columns: 1fr; } }
+
+.doc-kpi {
+  border-radius: var(--doc-radius);
+  background: #fff;
+  border: 1px solid var(--doc-border);
+  box-shadow: var(--doc-shadow-sm);
+  padding: 20px;
+  display: flex; align-items: center; gap: 16px;
+  transition: transform .22s ease, box-shadow .22s ease;
+  overflow: hidden; position: relative;
+}
+.doc-kpi::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--doc-gradient);
+  border-radius: 4px 0 0 4px;
+}
+.doc-kpi:hover { transform: translateY(-3px); box-shadow: var(--doc-shadow); }
+
+.doc-kpi__icon {
+  width: 52px; height: 52px;
+  border-radius: 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--doc-gradient);
+  color: #fff; flex-shrink: 0;
+  box-shadow: 0 8px 18px rgba(33, 49, 150,.28);
+}
+.doc-kpi__icon i { width: 22px; height: 22px; }
+.doc-kpi__icon.is-green {
+  background: linear-gradient(135deg, #15803d, #22c55e);
+  box-shadow: 0 8px 18px rgba(34,197,94,.25);
+}
+.doc-kpi__icon.is-amber {
+  background: linear-gradient(135deg, #1b287b, #22329c);
+  box-shadow: 0 8px 18px rgba(34, 50, 156,.25);
+}
+.doc-kpi__icon.is-red {
+  background: linear-gradient(135deg, #18246e, #1c297e);
+  box-shadow: 0 8px 18px rgba(28, 41, 126,.25);
+}
+.doc-kpi__num {
+  font-size: 2rem; font-weight: 900;
+  color: var(--doc-ink); line-height: 1; margin: 0 0 4px;
+}
+.doc-kpi__label {
+  font-size: .82rem; color: var(--doc-muted);
+  font-weight: 600; margin: 0 0 6px;
+}
+.doc-kpi__chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: #ebf6ff;
+  border: 1px solid #d1d7fc;
+  color: #213196;
+  padding: 3px 9px; border-radius: 999px;
+  font-size: .7rem; font-weight: 700;
+}
+.doc-kpi__chip i { width: 11px; height: 11px; }
+
+/* ══════════════════════════════════════════════════
+   ACTION CARDS
+══════════════════════════════════════════════════ */
+.doc-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 900px) { .doc-actions-grid { grid-template-columns: 1fr; } }
+
+.doc-action {
+  border-radius: var(--doc-radius);
+  background: #fff;
+  border: 1px solid var(--doc-border);
+  box-shadow: var(--doc-shadow-sm);
+  padding: 22px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform .22s ease, box-shadow .22s ease;
+  position: relative; overflow: hidden;
+  text-decoration: none; color: inherit;
+}
+.doc-action::after {
+  content: '';
+  position: absolute; bottom: -28px; right: -28px;
+  width: 90px; height: 90px; border-radius: 50%;
+  background: linear-gradient(135deg, rgba(33, 49, 150,.05), rgba(24, 36, 110,.03));
+  pointer-events: none;
+}
+.doc-action:hover { transform: translateY(-4px); box-shadow: var(--doc-shadow); color: inherit; }
+.doc-action__top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 10px;
+}
+.doc-action__icon {
+  width: 48px; height: 48px; border-radius: 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--doc-gradient);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(33, 49, 150,.28);
+}
+.doc-action__icon i { width: 22px; height: 22px; }
+.doc-action__icon.is-green {
+  background: linear-gradient(135deg, #15803d, #22c55e);
+  box-shadow: 0 8px 20px rgba(34,197,94,.25);
+}
+.doc-action__icon.is-amber {
+  background: linear-gradient(135deg, #1b287b, #22329c);
+  box-shadow: 0 8px 20px rgba(34, 50, 156,.25);
+}
+.doc-action__cta {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 7px 15px; border-radius: 999px;
+  font-size: .78rem; font-weight: 700;
+  background: var(--doc-gradient);
+  color: #fff; text-decoration: none; border: none;
+  box-shadow: 0 6px 14px rgba(33, 49, 150,.25);
+  transition: opacity .2s ease, transform .2s ease;
+  white-space: nowrap;
+}
+.doc-action__cta:hover { opacity: .9; transform: scale(.98); color: #fff; }
+.doc-action__title {
+  font-size: 1rem; font-weight: 800;
+  color: var(--doc-ink); margin: 0;
+}
+.doc-action__desc {
+  font-size: .84rem; color: var(--doc-muted);
+  margin: 0; line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════════════
+   CARD HEADER UTILITIES
+══════════════════════════════════════════════════ */
+.doc-card-icon {
+  width: 36px; height: 36px; border-radius: 11px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--doc-gradient); color: #fff; flex-shrink: 0;
+}
+.doc-card-icon i { width: 16px; height: 16px; }
+.doc-card-title { font-weight: 800; color: var(--doc-ink); margin: 0; font-size: 1rem; }
+.doc-card-sub { font-size: .78rem; color: var(--doc-muted); margin: 0; }
+.doc-card-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 13px; border-radius: 999px;
+  font-size: .75rem; font-weight: 700;
+  background: #ebf6ff; border: 1px solid #d1d7fc;
+  color: #213196; text-decoration: none;
+  transition: background .18s ease;
+}
+.doc-card-link:hover { background: #d4ecfd; color: #213196; }
+.doc-card-link i { width: 13px; height: 13px; }
+
+/* ══════════════════════════════════════════════════
+   TABLES
+══════════════════════════════════════════════════ */
+body.role-docente .jp-docente-table thead th,
+body.role-docente .jp-table thead th {
+  background: var(--doc-gradient);
+  color: #fff; font-weight: 700; font-size: .82rem;
+  padding: 12px 14px; border: none; white-space: nowrap;
+}
+body.role-docente .jp-docente-table tbody td,
+body.role-docente .jp-table tbody td {
+  padding: 11px 14px; vertical-align: middle;
+  border-top: 1px solid var(--doc-border); font-size: .9rem;
+}
+body.role-docente .jp-docente-table tbody tr:hover,
+body.role-docente .jp-table tbody tr:hover {
+  background: rgba(33, 49, 150,.04);
+}
+
+/* ══════════════════════════════════════════════════
+   LISTAS (asistencias, incidencias)
+══════════════════════════════════════════════════ */
+.doc-list { display: flex; flex-direction: column; gap: 10px; }
+
+.doc-list-item {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 10px;
+  padding: 12px 16px; border-radius: 14px;
+  background: #fff; border: 1px solid var(--doc-border);
+  box-shadow: 0 3px 10px rgba(33, 49, 150,.06);
+  transition: transform .18s ease;
+}
+.doc-list-item:hover { transform: translateX(3px); }
+.doc-list-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.doc-list-date {
+  font-size: .8rem; font-weight: 700;
+  color: var(--doc-ink);
+  display: flex; align-items: center; gap: 5px;
+}
+.doc-list-date i { width: 13px; height: 13px; color: var(--doc-sky-500); }
+
+/* Pills de estado */
+.doc-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px; border-radius: 999px;
+  font-size: .72rem; font-weight: 700;
+  border: 1px solid transparent;
+}
+.doc-pill--ok   { background: rgba(22,163,74,.1); color: #15803d; border-color: rgba(22,163,74,.22); }
+.doc-pill--warn { background: rgba(34, 50, 156,.12); color: #1b287b; border-color: rgba(34, 50, 156,.28); }
+.doc-pill--danger { background: rgba(185,28,28,.1); color: #b91c1c; border-color: rgba(185,28,28,.22); }
+.doc-pill--neutral { background: rgba(148,163,184,.12); color: #475569; border-color: rgba(148,163,184,.28); }
+
+/* Tags */
+.doc-tag {
+  display: inline-flex; align-items: center;
+  padding: 4px 11px; border-radius: 999px;
+  font-size: .72rem; font-weight: 700;
+  background: linear-gradient(135deg, rgba(24, 36, 110,.08), rgba(33, 49, 150,.06));
+  border: 1px solid rgba(33, 49, 150,.18); color: #213196;
+  max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.doc-tag--warning {
+  background: rgba(34, 50, 156,.12); color: #1b287b;
+  border-color: rgba(34, 50, 156,.26);
+}
+.doc-empty {
+  text-align: center; padding: 24px 0;
+  color: var(--doc-muted);
+}
+.doc-empty i { width: 30px; height: 30px; color: #d1d7fc; display: block; margin: 0 auto 8px; }
+
+/* ══════════════════════════════════════════════════
+   UTILIDADES COMPARTIDAS
+══════════════════════════════════════════════════ */
+body.role-docente .jp-soft-card {
+  background: #fff;
+  border: 1px solid var(--doc-border);
+  border-radius: var(--doc-radius);
+  box-shadow: var(--doc-shadow-sm);
+}
+
+/* jp-btn-search */
+body.role-docente .jp-btn-search {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 10px 20px; border-radius: 999px;
+  font-weight: 700; font-size: .9rem;
+  color: #fff; background: var(--doc-gradient);
+  border: none;
+  box-shadow: 0 8px 18px rgba(33, 49, 150,.28);
+  transition: opacity .2s, transform .2s;
+  cursor: pointer; text-decoration: none;
+}
+body.role-docente .jp-btn-search:hover { opacity: .9; transform: translateY(-1px); color: #fff; }
+
+body.role-docente .jp-btn-incidencia {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 10px 20px; border-radius: 999px;
+  font-weight: 700; font-size: .9rem;
+  color: #fff; background: var(--doc-gradient-blue);
+  border: none;
+  box-shadow: 0 8px 18px rgba(28, 41, 126,.25);
+  transition: opacity .2s, transform .2s;
+  cursor: pointer; text-decoration: none;
+}
+body.role-docente .jp-btn-incidencia:hover { opacity: .9; transform: translateY(-1px); color: #fff; }
+
+/* jp-table */
+body.role-docente .jp-notas-table thead th {
+  background: var(--doc-gradient);
+  color: #fff;
+}
+
+/* Filter card */
+body.role-docente .jp-docente-filter {
+  border: 1px solid var(--doc-border); background: #fff;
+  box-shadow: var(--doc-shadow-sm); border-radius: var(--doc-radius);
+}
+body.role-docente .jp-docente-filter-title {
+  font-weight: 800; color: var(--doc-ink); margin: 0 0 4px;
+}
+body.role-docente .jp-docente-filter-sub {
+  color: var(--doc-muted); font-size: .87rem; margin: 0 0 12px;
+}
+body.role-docente .jp-docente-filter-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+body.role-docente .jp-docente-filter-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 999px;
+  font-size: .76rem; font-weight: 700;
+  background: rgba(33, 49, 150,.08); color: #213196;
+  border: 1px solid rgba(33, 49, 150,.18);
+}
+body.role-docente .jp-docente-filter-pill i { width: 13px; height: 13px; }
+body.role-docente .jp-docente-filter-pill.is-accent {
+  background: rgba(24, 36, 110,.09); color: #18246e;
+  border-color: rgba(24, 36, 110,.2);
+}
+
+/* History button */
+body.role-docente .jp-docente-history-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 18px; border-radius: 999px;
+  font-weight: 700; color: #fff;
+  text-decoration: none; background: var(--doc-gradient);
+  border: none; box-shadow: 0 8px 18px rgba(33, 49, 150,.25);
+  transition: opacity .2s, transform .2s;
+  cursor: pointer; font-size: .88rem;
+}
+body.role-docente .jp-docente-history-btn:hover { opacity: .9; transform: translateY(-1px); color: #fff; }
+body.role-docente .jp-docente-history-btn i { width: 16px; height: 16px; }
+
+/* Docente link */
+body.role-docente .jp-docente-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: .78rem;
+  background: #ebf6ff; border: 1px solid #d1d7fc; color: #213196;
+  text-decoration: none; transition: background .18s ease;
+}
+body.role-docente .jp-docente-link:hover { background: #d4ecfd; color: #213196; }
+
+/* btn overrides */
+body.role-docente .btn-outline-primary {
+  border-color: #213196; color: #213196;
+  border-radius: 999px; font-weight: 700; padding: 8px 18px;
+}
+body.role-docente .btn-outline-primary:hover {
+  background: var(--doc-gradient); border-color: transparent; color: #fff;
+}
+body.role-docente .btn-outline-secondary {
+  border-color: #d1d7fc; color: var(--doc-muted);
+  border-radius: 999px; font-weight: 700; padding: 8px 18px;
+}
+body.role-docente .btn-outline-secondary:hover {
+  background: #ebf6ff; border-color: #d1d7fc; color: var(--doc-ink);
+}
+body.role-docente .btn-outline-danger {
+  border-radius: 999px; font-weight: 700; padding: 8px 18px;
+}
+body.role-docente .btn-sm.btn-outline-primary,
+body.role-docente .btn-sm.btn-outline-secondary,
+body.role-docente .btn-sm.btn-outline-danger { padding: 5px 12px; }
+
+body.role-docente .form-select:focus,
+body.role-docente .form-control:focus {
+  border-color: #23339e;
+  box-shadow: 0 0 0 3px rgba(35, 51, 158,.12);
+}
+
+/* jp-search-card */
+body.role-docente .jp-search-card {
+  background: linear-gradient(180deg, #ebf6ff 0%, #fff 100%);
+  border: 1px solid var(--doc-border);
+  border-radius: var(--doc-radius);
+  box-shadow: var(--doc-shadow-sm);
+}
+
+/* badge overrides */
+body.role-docente .badge.bg-primary { background: var(--doc-gradient) !important; border: none; }
+body.role-docente .badge.bg-success { background: linear-gradient(135deg,#15803d,#22c55e) !important; }
+body.role-docente .badge.bg-warning { background: linear-gradient(135deg,#1b287b,#22329c) !important; color:#fff !important; }
+body.role-docente .badge.bg-danger  { background: var(--doc-gradient-blue) !important; }
+
+/* ── jp-docente-action / jp-docente-action-grid (usados en otras vistas) ── */
+body.role-docente .jp-docente-action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 14px;
+}
+body.role-docente .jp-docente-action {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; border-radius: 18px;
+  border: 1px solid var(--doc-border); background: #fff;
+  color: var(--doc-ink); text-decoration: none;
+  position: relative; overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+body.role-docente .jp-docente-action:hover {
+  transform: translateY(-2px); box-shadow: var(--doc-shadow);
+}
+body.role-docente .jp-docente-action__icon {
+  width: 46px; height: 46px; border-radius: 14px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--doc-gradient); color: #fff; flex-shrink: 0;
+}
+body.role-docente .jp-docente-action--success .jp-docente-action__icon {
+  background: linear-gradient(135deg,#15803d,#22c55e);
+}
+body.role-docente .jp-docente-action--warning .jp-docente-action__icon {
+  background: linear-gradient(135deg,#1b287b,#22329c);
+}
+body.role-docente .jp-docente-action__title { font-weight: 700; color: var(--doc-ink); }
+body.role-docente .jp-docente-action__desc { font-size: .82rem; color: var(--doc-muted); }
+body.role-docente .jp-docente-action__cta {
+  margin-left: auto; font-size: .72rem; font-weight: 700;
+  padding: 6px 12px; border-radius: 999px;
+  background: #ebf6ff; color: #213196;
+  border: 1px solid #d1d7fc;
+}
+body.role-docente .jp-docente-action--success .jp-docente-action__cta {
+  background: rgba(22,163,74,.1); color: #15803d; border-color: rgba(22,163,74,.22);
+}
+body.role-docente .jp-docente-action--warning .jp-docente-action__cta {
+  background: rgba(34, 50, 156,.12); color: #1b287b; border-color: rgba(34, 50, 156,.25);
+}
+
+/* ── Listas (backward compat) ── */
+body.role-docente .jp-docente-list { display: flex; flex-direction: column; gap: 12px; }
+body.role-docente .jp-docente-list-item {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 12px 14px; border-radius: 14px;
+  border: 1px solid var(--doc-border); background: #fff;
+  box-shadow: 0 3px 10px rgba(33, 49, 150,.05);
+}
+body.role-docente .jp-docente-list-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+body.role-docente .jp-docente-date { font-size: .82rem; font-weight: 600; color: var(--doc-muted); }
+body.role-docente .jp-docente-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px; border-radius: 999px;
+  font-size: .72rem; font-weight: 700; border: 1px solid transparent;
+}
+body.role-docente .jp-docente-pill--ok    { background: rgba(22,163,74,.1); color: #15803d; border-color: rgba(22,163,74,.22); }
+body.role-docente .jp-docente-pill--warn  { background: rgba(34, 50, 156,.12); color: #1b287b; border-color: rgba(34, 50, 156,.28); }
+body.role-docente .jp-docente-pill--danger { background: rgba(185,28,28,.1); color: #b91c1c; border-color: rgba(185,28,28,.22); }
+body.role-docente .jp-docente-pill--neutral { background: rgba(148,163,184,.12); color: #475569; border-color: rgba(148,163,184,.28); }
+body.role-docente .jp-docente-tag {
+  display: inline-flex; align-items: center; padding: 5px 11px;
+  border-radius: 999px; font-size: .72rem; font-weight: 700;
+  background: rgba(33, 49, 150,.08); color: #213196;
+  border: 1px solid rgba(33, 49, 150,.18);
+}
+body.role-docente .jp-docente-tag--warning {
+  background: rgba(34, 50, 156,.12); color: #1b287b; border-color: rgba(34, 50, 156,.26);
+}
+body.role-docente .jp-docente-empty {
+  padding: 14px; border-radius: 12px;
+  border: 1px dashed var(--doc-border);
+  color: var(--doc-muted); text-align: center; background: #fff;
+}
+
+/* ── Att / filter (asistencias) ── */
+body.role-docente .jp-docente-att-hero {
+  background: var(--doc-gradient); color: #fff; border: none;
+}
+body.role-docente .jp-docente-att-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.22); color: #fff;
+  padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: .85rem;
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .doc-hero__inner { flex-direction: column; align-items: flex-start; }
+  .doc-hero__right { align-items: flex-start; }
+  .doc-hero__pills { justify-content: flex-start; }
+  .doc-kpi__num { font-size: 1.6rem; }
+  .doc-actions-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 991px) {
+  body.role-docente .pc-header .header-search { display: none; }
+}

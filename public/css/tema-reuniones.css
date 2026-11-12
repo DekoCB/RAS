@@ -1,0 +1,76 @@
+/* ==========================================================================
+   TEMA - Reuniones, capacitaciones y cartas de compromiso
+   Identidad: la agenda. Indigo, cabecera con banda lateral de calendario y
+   cifras presentadas como hojas de almanaque.
+   ========================================================================== */
+
+body.tema-reuniones {
+  --mod-navy-900: #1b214b;
+  --mod-navy-800: #1e2554;
+  --mod-navy-700: #242d66;
+  --mod-blue-600: #253286;
+  --mod-blue-500: #2d3b94;
+  --mod-sky-500: #3f4b9a;
+  --mod-sky-400: #b1baf8;
+  --mod-surface: #f6f6fe;
+  --mod-line: #e0e0f4;
+}
+
+/* Cifras como hojas de almanaque: cabecera de color y numero grande */
+body.tema-reuniones .mod-stat {
+  border-left: none;
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid var(--mod-line);
+}
+
+body.tema-reuniones .mod-stat__num {
+  padding: 18px 12px 8px;
+  font-size: 1.8rem;
+}
+
+body.tema-reuniones .mod-stat__label {
+  background: var(--mod-blue-600);
+  color: #fff;
+  padding: 8px 10px;
+  margin-top: 0;
+  font-size: .68rem;
+}
+
+body.tema-reuniones .mod-stat.s2 .mod-stat__label { background: var(--mod-sky-500); }
+body.tema-reuniones .mod-stat.s3 .mod-stat__label { background: #16a34a; }
+body.tema-reuniones .mod-stat.s4 .mod-stat__label { background: var(--mod-navy-800); }
+
+body.tema-reuniones .mod-card {
+  border-radius: 14px;
+  border-left: 4px solid var(--mod-blue-500);
+}
+
+body.tema-reuniones .mod-card__head {
+  background: var(--mod-surface);
+}
+
+body.tema-reuniones .mod-table thead th {
+  background: var(--mod-surface);
+  color: var(--mod-navy-800);
+  border-bottom: 2px solid var(--mod-blue-500);
+}
+
+/* La primera columna es la fecha: se destaca */
+body.tema-reuniones .mod-table tbody td:first-child {
+  font-weight: 700;
+  color: var(--mod-navy-800);
+  white-space: nowrap;
+}
+
+body.tema-reuniones .mod-chip {
+  border-radius: 5px;
+  background: #e4e4fb;
+  color: var(--mod-navy-700);
+}
+
+body.tema-reuniones .mod-btn {
+  border-radius: 9px;
+}

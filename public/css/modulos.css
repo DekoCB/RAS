@@ -1,0 +1,405 @@
+/* ==========================================================================
+   Modulos del documento de requerimientos v1.0
+   Estilos compartidos por Institucion, Sedes, Biblioteca y Comedor.
+   Paleta azul institucional, alineada con el resto del sistema.
+   ========================================================================== */
+
+:root {
+  --mod-navy-900: #0d133b;
+  --mod-navy-800: #10184a;
+  --mod-navy-700: #162061;
+  --mod-blue-600: #1c297e;
+  --mod-blue-500: #1f2e8f;
+  --mod-sky-500: #213196;
+  --mod-sky-400: #23339e;
+  --mod-ink: #0b0e24;
+  --mod-muted: #5b6b83;
+  --mod-line: #e2e8f0;
+  --mod-surface: #f5faff;
+}
+
+/* ── Tarjetas de resumen ──────────────────────────────────────────── */
+.mod-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mod-stat {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 3px 14px rgba(11, 14, 36, .08);
+  border-left: 5px solid var(--mod-sky-500);
+}
+
+.mod-stat.s2 { border-left-color: var(--mod-blue-600); }
+.mod-stat.s3 { border-left-color: #16a34a; }
+.mod-stat.s4 { border-left-color: var(--mod-navy-700); }
+
+.mod-stat__num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--mod-ink);
+  line-height: 1.1;
+}
+
+.mod-stat__label {
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--mod-muted);
+  margin-top: 3px;
+}
+
+/* ── Paneles ──────────────────────────────────────────────────────── */
+.mod-card {
+  background: #fff;
+  border: 1px solid var(--mod-line);
+  border-radius: 16px;
+  box-shadow: 0 3px 14px rgba(11, 14, 36, .06);
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.mod-card__head {
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--mod-line);
+  background: var(--mod-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mod-card__head h5 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--mod-navy-800);
+}
+
+.mod-card__head small {
+  color: var(--mod-muted);
+  font-size: .78rem;
+}
+
+.mod-card__body { padding: 22px; }
+
+/* ── Formularios ──────────────────────────────────────────────────── */
+.mod-form label {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--mod-muted);
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.mod-form .form-control,
+.mod-form .form-select {
+  border-radius: 10px;
+  border: 1px solid var(--mod-line);
+  background: var(--mod-surface);
+  padding: 10px 13px;
+  font-size: .9rem;
+}
+
+.mod-form .form-control:focus,
+.mod-form .form-select:focus {
+  background: #fff;
+  border-color: var(--mod-sky-400);
+  box-shadow: 0 0 0 4px rgba(35, 51, 158, .15);
+}
+
+.mod-btn {
+  background: linear-gradient(135deg, var(--mod-blue-500), var(--mod-navy-700));
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: .86rem;
+  padding: 10px 22px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(28, 41, 126, .28);
+  transition: transform .18s, box-shadow .18s;
+}
+
+.mod-btn:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(28, 41, 126, .36);
+}
+
+.mod-btn-sm {
+  padding: 6px 14px;
+  font-size: .78rem;
+  border-radius: 8px;
+}
+
+/* ── Tablas ───────────────────────────────────────────────────────── */
+.mod-table-wrap { overflow-x: auto; }
+
+.mod-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .87rem;
+}
+
+.mod-table thead th {
+  background: var(--mod-surface);
+  color: var(--mod-navy-800);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 2px solid var(--mod-line);
+  white-space: nowrap;
+}
+
+.mod-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--mod-line);
+  color: var(--mod-ink);
+  vertical-align: middle;
+}
+
+.mod-table tbody tr:hover { background: var(--mod-surface); }
+
+.mod-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--mod-muted);
+  font-size: .9rem;
+}
+
+/* ── Etiquetas de estado ──────────────────────────────────────────── */
+.mod-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+  background: #e2eefe;
+  color: var(--mod-blue-600);
+}
+
+.mod-chip--ok      { background: #dcfce7; color: #15803d; }
+.mod-chip--pend    { background: #fef3c7; color: #92400e; }
+.mod-chip--neutral { background: #eef2f7; color: var(--mod-muted); }
+
+/* ── Galeria de evidencias ────────────────────────────────────────── */
+.mod-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.mod-gallery__item {
+  background: #fff;
+  border: 1px solid var(--mod-line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(11, 14, 36, .07);
+}
+
+.mod-gallery__item img,
+.mod-gallery__item video {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  background: #0d133b;
+}
+
+.mod-gallery__meta {
+  padding: 11px 14px;
+  font-size: .8rem;
+  color: var(--mod-muted);
+}
+
+.mod-gallery__meta strong {
+  display: block;
+  color: var(--mod-ink);
+  font-size: .85rem;
+  margin-bottom: 2px;
+}
+
+/* ── Barra de acciones ────────────────────────────────────────────────
+   Sustituye a la cabecera de color: el titulo de la pantalla ya lo
+   muestra la barra del layout, aqui solo quedan la navegacion y el dato
+   que identifica al registro abierto. */
+.mod-barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.mod-barra__contexto {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--mod-navy-800);
+}
+
+.mod-barra__acciones {
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+/* Fuera de la cabecera oscura, el boton fantasma necesita contraste propio */
+.mod-barra .mod-btn-ghost {
+  background: #fff;
+  border-color: var(--mod-line);
+  color: var(--mod-navy-800);
+}
+
+.mod-barra .mod-btn-ghost:hover {
+  background: var(--mod-surface);
+  border-color: var(--mod-blue-500);
+  color: var(--mod-blue-600);
+  transform: none;
+}
+
+/* ── Modales de registro ──────────────────────────────────────────── */
+/* Lanzador: la barra que reemplaza al antiguo formulario inline. */
+.mod-launcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.mod-launcher__texto h5 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--mod-navy-800);
+}
+
+.mod-launcher__texto small {
+  color: var(--mod-muted);
+  font-size: .78rem;
+}
+
+.mod-btn--nuevo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mod-btn--nuevo svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.5;
+}
+
+/* Ventana */
+.mod-modal .modal-content {
+  border: 1px solid var(--mod-line);
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(11, 14, 36, .22);
+  overflow: hidden;
+}
+
+.mod-modal .modal-header {
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--mod-line);
+  background: var(--mod-surface);
+  align-items: flex-start;
+}
+
+.mod-modal .modal-header h5 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--mod-navy-800);
+}
+
+.mod-modal .modal-header small {
+  display: block;
+  color: var(--mod-muted);
+  font-size: .78rem;
+  margin-top: 2px;
+}
+
+.mod-modal .modal-body { padding: 22px; }
+
+/* El pie del formulario queda fijo al borde inferior del modal. */
+.mod-modal .mod-form__pie {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  border-top: 1px solid var(--mod-line);
+  margin: 22px -22px -22px;
+  padding: 16px 22px;
+  background: var(--mod-surface);
+}
+
+.mod-modal .mod-form__pie .mod-form__extra {
+  margin-right: auto;
+  text-transform: none;
+}
+
+.mod-btn-cancelar {
+  background: #fff;
+  border: 1px solid var(--mod-line);
+  color: var(--mod-muted);
+  font-weight: 700;
+  font-size: .86rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: border-color .18s, color .18s;
+}
+
+.mod-btn-cancelar:hover {
+  border-color: var(--mod-sky-400);
+  color: var(--mod-navy-800);
+}
+
+@media (max-width: 575.98px) {
+  .mod-launcher { align-items: flex-start; flex-direction: column; }
+  .mod-btn--nuevo { width: 100%; justify-content: center; }
+}
+
+/* ── Filtros dentro de la cabecera de una tarjeta ─────────────────── */
+/* Bootstrap pone width:100% a .form-select y .form-control, asi que dentro
+   de una cabecera en flex cada campo se comia una linea entera y estiraba
+   el panel. Aqui vuelven a medir por su contenido. */
+.mod-card__head .mod-form .form-select,
+.mod-card__head .mod-form .form-control {
+  width: auto;
+  max-width: 100%;
+}
+
+.mod-card__head .mod-form {
+  align-items: center;
+}
+
+@media (max-width: 575.98px) {
+  .mod-card__head .mod-form,
+  .mod-card__head .mod-form .form-select,
+  .mod-card__head .mod-form .form-control {
+    width: 100%;
+  }
+}
+
+/* Cuando el modal no lleva subtitulo no hay nada que explicar: se muestra
+   solo el boton, sin repetir el titulo al lado. */
+.mod-launcher--solo { justify-content: flex-end; }

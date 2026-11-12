@@ -1,0 +1,77 @@
+/* ==========================================================================
+   TEMA - Modulo 9, Psicologia
+   Identidad: espacio de calma. Azul suave y aireado, cabecera clara con
+   halos concentricos, mucho blanco y bordes muy redondeados. Deliberadamente
+   el modulo menos "administrativo" del sistema.
+   ========================================================================== */
+
+body.tema-psicologia {
+  --mod-navy-900: #242b54;
+  --mod-navy-800: #2c3363;
+  --mod-navy-700: #4a67a3;
+  --mod-blue-600: #6484c4;
+  --mod-blue-500: #7d9ad6;
+  --mod-sky-500: #b9bfe6;
+  --mod-sky-400: #bcd0f2;
+  --mod-surface: #f7f9fe;
+  --mod-line: #e4eaf6;
+  --mod-muted: #6b7a99;
+}
+
+/* Tarjetas muy redondeadas y sombras suaves */
+body.tema-psicologia .mod-stat {
+  border-left: none;
+  border-radius: 22px;
+  border: 1px solid var(--mod-line);
+  box-shadow: 0 4px 18px rgba(45, 52, 101, .07);
+  padding: 22px 24px;
+}
+
+body.tema-psicologia .mod-stat__num {
+  color: var(--mod-navy-800);
+  font-weight: 700;
+}
+
+body.tema-psicologia .mod-card {
+  border-radius: 22px;
+  border-color: var(--mod-line);
+  box-shadow: 0 4px 18px rgba(45, 52, 101, .07);
+}
+
+body.tema-psicologia .mod-card__head {
+  background: #fff;
+  border-bottom: 1px solid var(--mod-line);
+  padding: 20px 26px;
+}
+
+body.tema-psicologia .mod-card__body { padding: 26px; }
+
+body.tema-psicologia .mod-table thead th {
+  background: #fff;
+  color: var(--mod-navy-800);
+  border-bottom: 1px solid var(--mod-line);
+  letter-spacing: .05em;
+}
+
+body.tema-psicologia .mod-table tbody td {
+  border-bottom: 1px solid var(--mod-line);
+}
+
+body.tema-psicologia .mod-chip {
+  border-radius: 999px;
+  background: #eaf0fb;
+  color: var(--mod-navy-700);
+  font-weight: 700;
+}
+
+body.tema-psicologia .mod-btn {
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--mod-blue-500), var(--mod-navy-700));
+  box-shadow: 0 6px 16px rgba(100, 132, 196, .3);
+}
+
+body.tema-psicologia .mod-form .form-control,
+body.tema-psicologia .mod-form .form-select {
+  border-radius: 14px;
+  background: var(--mod-surface);
+}

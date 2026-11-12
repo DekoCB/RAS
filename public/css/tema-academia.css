@@ -1,0 +1,101 @@
+/* ==========================================================================
+   TEMA - Modulo 10, Real Academia preuniversitaria
+   Identidad: competencia y rendimiento. Azul electrico sobre casi negro,
+   angulos marcados, numeros grandes y cifras montadas sobre barras de
+   marcador. Es el modulo mas energico del sistema.
+   ========================================================================== */
+
+body.tema-academia {
+  --mod-navy-900: #06081a;
+  --mod-navy-800: #0a0f2e;
+  --mod-navy-700: #101748;
+  --mod-blue-600: #192572;
+  --mod-blue-500: #1d2b85;
+  --mod-sky-500: #213096;
+  --mod-sky-400: #23349d;
+  --mod-surface: #f2f8fd;
+  --mod-line: #d6e4f0;
+}
+
+/* Cifras como marcador: numero enorme y barra inferior de color */
+body.tema-academia .mod-stat {
+  border-left: none;
+  border-radius: 4px;
+  border-bottom: 5px solid var(--mod-blue-500);
+  background: #fff;
+  padding: 20px 22px 16px;
+}
+
+body.tema-academia .mod-stat.s2 { border-bottom-color: var(--mod-sky-500); }
+body.tema-academia .mod-stat.s3 { border-bottom-color: #16a34a; }
+body.tema-academia .mod-stat.s4 { border-bottom-color: var(--mod-navy-700); }
+
+body.tema-academia .mod-stat__num {
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  color: var(--mod-navy-800);
+}
+
+body.tema-academia .mod-stat__label {
+  font-size: .69rem;
+  letter-spacing: .12em;
+}
+
+body.tema-academia .mod-card {
+  border-radius: 4px;
+  border-top: 3px solid var(--mod-navy-800);
+}
+
+body.tema-academia .mod-card__head {
+  background: var(--mod-navy-800);
+  border-bottom: none;
+}
+
+body.tema-academia .mod-card__head h5 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .92rem;
+}
+
+body.tema-academia .mod-card__head small {
+  color: rgba(226, 240, 255, .62);
+}
+
+body.tema-academia .mod-table thead th {
+  background: var(--mod-surface);
+  border-bottom: 2px solid var(--mod-blue-500);
+  letter-spacing: .1em;
+}
+
+body.tema-academia .mod-chip {
+  border-radius: 2px;
+  background: var(--mod-navy-800);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: .68rem;
+}
+
+body.tema-academia .mod-chip--neutral {
+  background: #e2e8f0;
+  color: var(--mod-muted);
+}
+
+body.tema-academia .mod-chip--ok { background: #15803d; color: #fff; }
+body.tema-academia .mod-chip--pend { background: #bc281a; color: #fff; }
+
+body.tema-academia .mod-btn {
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+body.tema-academia .mod-btn-ghost {
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .78rem;
+}

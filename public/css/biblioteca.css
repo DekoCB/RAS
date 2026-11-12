@@ -1,0 +1,436 @@
+/* ==========================================================================
+   MODULO 7 - Biblioteca
+   Identidad propia: registro de lecturas. El diseno toma prestado el
+   lenguaje de una biblioteca real (lomos en el estante, fichas de catalogo,
+   tipografia editorial) en una gama azul petroleo que la distingue del
+   resto del sistema sin salirse de la familia institucional.
+   ========================================================================== */
+
+:root {
+  --bib-tinta: #0f1433;
+  --bib-profundo: #121a50;
+  --bib-petroleo: #162064;
+  --bib-teal: #1b287a;
+  --bib-cielo: #23318d;
+  --bib-verde: #15803d;
+  --bib-gris: #5a6b7a;
+  --bib-gris-claro: #93a5b2;
+  --bib-linea: #d9e6ec;
+  --bib-papel: #f6fbfd;
+  --bib-crema: #fbfaf5;
+  --bib-sombra: 0 8px 26px rgba(15, 20, 51, .08);
+}
+
+/* ── Botones ──────────────────────────────────────────────────────── */
+.bib-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: .84rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .16s, color .16s, border-color .16s, transform .16s;
+}
+
+.bib-btn--tinta {
+  background: var(--bib-profundo);
+  color: #fff;
+}
+
+.bib-btn--tinta:hover {
+  background: var(--bib-tinta);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.bib-btn--teal {
+  background: var(--bib-teal);
+  color: #fff;
+}
+
+.bib-btn--teal:hover {
+  background: var(--bib-petroleo);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.bib-btn--borde {
+  background: #fff;
+  border-color: var(--bib-linea);
+  color: var(--bib-gris);
+}
+
+.bib-btn--borde:hover {
+  border-color: var(--bib-teal);
+  color: var(--bib-teal);
+}
+
+.bib-btn--mini {
+  padding: 6px 13px;
+  font-size: .75rem;
+  border-radius: 7px;
+}
+
+/* ── Estante de cifras ────────────────────────────────────────────────
+   Los indicadores son lomos apoyados sobre una repisa. */
+.bib-estante {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+  border-bottom: 3px solid var(--bib-profundo);
+  border-radius: 0 0 3px 3px;
+}
+
+.bib-lomo {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--bib-linea);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: 20px 20px 20px 26px;
+  box-shadow: 0 -3px 14px rgba(15, 20, 51, .05);
+}
+
+.bib-lomo::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 16px;
+  bottom: 16px;
+  width: 4px;
+  border-radius: 3px;
+  background: var(--bib-teal);
+}
+
+.bib-lomo.es-cielo::before { background: var(--bib-cielo); }
+.bib-lomo.es-verde::before { background: var(--bib-verde); }
+.bib-lomo.es-hondo::before { background: var(--bib-profundo); }
+
+.bib-lomo__num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--bib-tinta);
+}
+
+.bib-lomo__etq {
+  margin-top: 6px;
+  font-size: .69rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--bib-gris);
+}
+
+/* ── Bloques ──────────────────────────────────────────────────────── */
+.bib-bloque {
+  background: #fff;
+  border: 1px solid var(--bib-linea);
+  border-radius: 14px;
+  box-shadow: var(--bib-sombra);
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.bib-bloque__head {
+  padding: 18px 24px;
+  border-bottom: 2px solid var(--bib-linea);
+  background: var(--bib-papel);
+}
+
+.bib-bloque__head h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--bib-tinta);
+}
+
+.bib-bloque__head p {
+  margin: 4px 0 0;
+  font-size: .8rem;
+  color: var(--bib-gris);
+}
+
+.bib-bloque__body { padding: 22px 24px; }
+
+.bib-bloque__pie {
+  padding: 16px 24px;
+  border-top: 1px solid var(--bib-linea);
+  background: var(--bib-papel);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ── Formularios ──────────────────────────────────────────────────── */
+.bib-etiqueta {
+  display: block;
+  font-size: .71rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bib-gris);
+  margin-bottom: 6px;
+}
+
+.bib-input,
+.bib-select,
+.bib-area {
+  width: 100%;
+  border: 1px solid var(--bib-linea);
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px 13px;
+  font-family: inherit;
+  font-size: .89rem;
+  color: var(--bib-tinta);
+  transition: border-color .16s, box-shadow .16s;
+}
+
+.bib-input::placeholder { color: var(--bib-gris-claro); }
+
+.bib-input:focus,
+.bib-select:focus,
+.bib-area:focus {
+  outline: none;
+  border-color: var(--bib-teal);
+  box-shadow: 0 0 0 3px rgba(27, 40, 122, .16);
+}
+
+.bib-rejilla {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.bib-c2  { grid-column: span 2; }
+.bib-c3  { grid-column: span 3; }
+.bib-c4  { grid-column: span 4; }
+.bib-c5  { grid-column: span 5; }
+.bib-c6  { grid-column: span 6; }
+.bib-c7  { grid-column: span 7; }
+.bib-c12 { grid-column: span 12; }
+
+@media (max-width: 980px) {
+  .bib-c2, .bib-c3, .bib-c4 { grid-column: span 6; }
+  .bib-c5, .bib-c7 { grid-column: span 12; }
+}
+
+@media (max-width: 620px) {
+  .bib-rejilla > * { grid-column: span 12 !important; }
+}
+
+/* Barra de filtros: rejilla, nunca una columna apilada */
+.bib-filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+@media (max-width: 720px) {
+  .bib-filtros { grid-template-columns: 1fr 1fr; }
+  .bib-filtros > :last-child { grid-column: 1 / -1; }
+}
+
+/* ── Ficha de catalogo ────────────────────────────────────────────────
+   El formulario de lectura se presenta como una ficha de biblioteca. */
+.bib-ficha {
+  background: var(--bib-crema);
+  border: 1px solid #e6e2d4;
+  border-radius: 12px;
+  padding: 26px 28px;
+  position: relative;
+  box-shadow: var(--bib-sombra);
+}
+
+/* Perforacion superior de la ficha */
+.bib-ficha::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 8px;
+  border-radius: 999px;
+  background: #e6e2d4;
+}
+
+.bib-ficha__titulo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--bib-tinta);
+  text-align: center;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding-top: 12px;
+  margin-bottom: 4px;
+}
+
+.bib-ficha__sub {
+  text-align: center;
+  font-size: .78rem;
+  color: var(--bib-gris);
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e6e2d4;
+}
+
+.bib-ficha .bib-input,
+.bib-ficha .bib-select,
+.bib-ficha .bib-area {
+  background: rgba(255, 255, 255, .75);
+  border-color: #e6e2d4;
+}
+
+/* Renglones del resumen, como una ficha manuscrita */
+.bib-renglones {
+  background-image: repeating-linear-gradient(
+    180deg,
+    transparent 0 27px,
+    #e6e2d4 27px 28px
+  );
+  line-height: 28px;
+  padding-top: 6px;
+}
+
+/* ── Tabla ────────────────────────────────────────────────────────── */
+.bib-tabla-wrap { overflow-x: auto; }
+
+.bib-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .87rem;
+}
+
+.bib-tabla thead th {
+  background: #fff;
+  color: var(--bib-profundo);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 12px 18px;
+  text-align: left;
+  border-bottom: 2px solid var(--bib-profundo);
+  white-space: nowrap;
+}
+
+.bib-tabla tbody td {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--bib-linea);
+  color: var(--bib-tinta);
+  vertical-align: middle;
+}
+
+.bib-tabla tbody tr:last-child td { border-bottom: none; }
+.bib-tabla tbody tr:hover td { background: var(--bib-papel); }
+
+/* El titulo del libro se compone en serif */
+.bib-titulo-libro {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--bib-tinta);
+  line-height: 1.25;
+}
+
+.bib-autor {
+  font-style: italic;
+  color: var(--bib-gris);
+}
+
+.bib-lector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bib-lector__marca {
+  width: 4px;
+  height: 30px;
+  border-radius: 3px;
+  background: var(--bib-teal);
+  flex-shrink: 0;
+}
+
+.bib-lector__nombre { font-weight: 700; line-height: 1.2; }
+
+.bib-vacio {
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--bib-gris);
+  font-size: .9rem;
+}
+
+.bib-vacio__titulo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  color: var(--bib-tinta);
+  margin-bottom: 6px;
+}
+
+/* ── Sellos de estado ─────────────────────────────────────────────── */
+.bib-sello {
+  display: inline-block;
+  padding: 4px 11px;
+  border-radius: 4px;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border: 1.5px solid;
+}
+
+.bib-sello--curso    { color: var(--bib-teal); border-color: rgba(27, 40, 122, .45); background: #e8f7fb; }
+.bib-sello--fin      { color: var(--bib-verde); border-color: rgba(21, 128, 61, .35); background: #eafaf0; }
+.bib-sello--falta    { color: #92400e; border-color: rgba(188, 40, 26, .35); background: #fdf5e6; }
+.bib-sello--neutro   { color: var(--bib-gris); border-color: var(--bib-linea); background: #f4f7f9; }
+
+/* ── Avisos ───────────────────────────────────────────────────────── */
+.bib-aviso {
+  border-radius: 10px;
+  padding: 13px 18px;
+  margin-bottom: 18px;
+  font-size: .87rem;
+  border-left: 4px solid;
+}
+
+.bib-aviso--info  { background: #e9f6fa; border-color: var(--bib-teal); color: #121a50; }
+.bib-aviso--error { background: #fdecec; border-color: #dc2626; color: #7f1d1d; }
+.bib-aviso ul { margin: 6px 0 0; padding-left: 18px; }
+
+/* ── Utilidades ───────────────────────────────────────────────────── */
+.bib-derecha { text-align: right; }
+.bib-en-linea { display: inline-block; }
+.bib-fin-campo { display: flex; align-items: flex-end; }
+
+/* ── Barra de acciones ────────────────────────────────────────────────
+   Sustituye a la portadilla: el titulo lo da la barra del layout. */
+.bib-barra {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.bib-barra__acciones {
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,234 @@
+:root {
+  --jp-primary: #172269;  /* azul del escudo */
+  --jp-primary-dark: #0f1645;  /* azul del escudo, tono profundo */
+  --jp-border: #dee6eb;
+  --jp-text-muted: #6b7280;
+}
+
+.pc-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--jp-border);
+  box-shadow: 0 8px 24px rgba(15, 19, 42, 0.06);
+}
+
+/* Sidebar brand */
+.pc-sidebar .m-header .b-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pc-sidebar .m-header .logo-sm {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* Alineación vertical del Header */
+.pc-header .header-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  /* Centrado vertical vital */
+  min-height: 72px;
+  padding: 0 24px;
+  min-height: 72px;
+  padding: 0 24px;
+}
+
+/* Contenedor de items del lado izquierdo (Menu/Buscador) */
+.pc-header .me-auto .list-unstyled {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+/* Contenedor de items del lado derecho (Notificaciones/Perfil) */
+.pc-header .ms-auto .list-unstyled {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* Espacio uniforme entre iconos */
+  margin-bottom: 0;
+}
+
+/* Modificación del botón menú (Sidebar Toggle) */
+#mobile-collapse {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin-right: 16px;
+  background: transparent;
+  /* Fondo limpio */
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+
+#mobile-collapse i,
+#mobile-collapse svg {
+  width: 22px !important;
+  height: 22px !important;
+  color: #6b7280 !important;
+  /* Gris neutro */
+  stroke: #6b7280 !important;
+  stroke-width: 2;
+}
+
+/* Hover effect suave */
+#mobile-collapse:hover {
+  background-color: #f3f4f6;
+}
+
+#mobile-collapse:hover i,
+#mobile-collapse:hover svg {
+  color: var(--jp-primary) !important;
+  stroke: var(--jp-primary) !important;
+}
+
+/* Buscador */
+.pc-header .header-search {
+  display: flex;
+  align-items: center;
+}
+
+.pc-header .header-search input {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  min-width: 240px;
+  height: 40px;
+  /* Altura fija para alineación */
+  padding-left: 12px;
+}
+
+/* Estilos para el botón de minimizar sidebar (Desktop) */
+#sidebar-hide {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  /* Igualar altura buscador */
+  height: 40px;
+  /* Igualar altura buscador */
+  padding: 0;
+  margin-right: 16px;
+  border-radius: 8px;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 991px) {
+  #sidebar-hide {
+    display: none !important;
+  }
+}
+
+#sidebar-hide:hover {
+  background-color: #f3f4f6;
+  color: var(--jp-primary);
+}
+
+#sidebar-hide i {
+  width: 22px;
+  height: 22px;
+}
+
+/* Alineación de items del Sidebar (Menú Principal) */
+.pc-sidebar .pc-link {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.pc-sidebar .pc-micon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+  height: 100%;
+  /* Asegurar centrado */
+  margin-right: 10px;
+  /* Espacio consistente */
+}
+
+.pc-sidebar .pc-micon i,
+.pc-sidebar .pc-micon svg {
+  vertical-align: middle;
+}
+
+/* Reglas de visibilidad RESPONSIVE para el botón móvil */
+@media (min-width: 992px) {
+  #mobile-collapse {
+    display: none !important;
+  }
+}
+
+
+/* Iconos de la derecha (Notificaciones) */
+.pc-header .pc-head-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: #6b7280;
+  /* Gris neutro */
+  transition: all 0.2s;
+  text-decoration: none;
+  /* Prevenir subrayado */
+}
+
+.pc-header .pc-head-link:hover {
+  background-color: #f3f4f6;
+  color: var(--jp-primary);
+}
+
+.pc-header .pc-head-link i,
+.pc-header .pc-head-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+@media (max-width: 991px) {
+  .jp-header-brand {
+    display: none;
+  }
+
+  .pc-header .header-search {
+    display: none;
+  }
+}
+
+/* ── Footer fijo en la parte inferior izquierda ─────────── */
+.pc-footer {
+    position: fixed;
+    bottom: 0;
+    left: 260px;
+    right: 0;
+    margin: 0;
+    padding: 8px 0;
+    background: #fff;
+    border-top: 1px solid #e8ebf0;
+    z-index: 900;
+    font-size: .78rem;
+    color: #94a3b8;
+}
+.pc-footer .footer-wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+/* Espacio para que el contenido no quede tapado por el footer */
+.pc-container .pc-content {
+    padding-bottom: 48px;
+}
+@media (max-width: 1024px) {
+    .pc-footer { left: 0; }
+}

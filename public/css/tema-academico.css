@@ -1,0 +1,88 @@
+/* ==========================================================================
+   TEMA - Modulo 5, Academico
+   Identidad: el cuaderno escolar. Tinta azul sobre papel con renglones y
+   margen rojo-azulado a la izquierda; los paneles imitan hojas y las
+   cifras van escritas en el encabezado de la pagina.
+   ========================================================================== */
+
+body.tema-academico {
+  --mod-navy-900: #10163f;
+  --mod-navy-800: #141c4e;
+  --mod-navy-700: #17215d;
+  --mod-blue-600: #1f2e8d;
+  --mod-blue-500: #213197;
+  --mod-sky-500: #25359c;
+  --mod-sky-400: #3d4a9e;
+  --mod-surface: #f7f9ff;
+  --mod-line: #dbe3f4;
+}
+
+/* Cifras como anotaciones al margen de una hoja */
+body.tema-academico .mod-stat {
+  border-left: 3px solid var(--mod-blue-600);
+  border-radius: 3px 12px 12px 3px;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 27px, var(--mod-line) 27px 28px);
+  background-color: #fff;
+  padding: 18px 22px;
+}
+
+body.tema-academico .mod-stat.s2 { border-left-color: var(--mod-sky-500); }
+body.tema-academico .mod-stat.s3 { border-left-color: #16a34a; }
+body.tema-academico .mod-stat.s4 { border-left-color: var(--mod-navy-700); }
+
+body.tema-academico .mod-stat__num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  color: var(--mod-blue-600);
+}
+
+/* Paneles como hojas de cuaderno, con margen a la izquierda */
+body.tema-academico .mod-card {
+  border-radius: 3px 14px 14px 3px;
+  border-left: 3px solid var(--mod-sky-400);
+}
+
+body.tema-academico .mod-card__head {
+  background: var(--mod-surface);
+  border-bottom: 2px solid var(--mod-line);
+}
+
+body.tema-academico .mod-card__head h5 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.06rem;
+}
+
+body.tema-academico .mod-table thead th {
+  background: #fff;
+  border-bottom: 2px solid var(--mod-blue-600);
+  color: var(--mod-navy-800);
+}
+
+/* Renglon alterno tenue, como una hoja pautada */
+body.tema-academico .mod-table tbody tr:nth-child(odd) td {
+  background: var(--mod-surface);
+}
+
+body.tema-academico .mod-table tbody tr:hover td {
+  background: #eef3ff;
+}
+
+body.tema-academico .mod-chip {
+  border-radius: 4px;
+  background: #e3ebfd;
+  color: var(--mod-blue-600);
+}
+
+body.tema-academico .mod-btn {
+  border-radius: 6px;
+}
+
+body.tema-academico .mod-btn-ghost {
+  border-radius: 6px;
+}
+
+body.tema-academico .mod-empty {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .95rem;
+}

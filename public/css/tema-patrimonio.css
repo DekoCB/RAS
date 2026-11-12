@@ -1,0 +1,205 @@
+/* ==========================================================================
+   TEMA - Modulo 14, Inmobiliario y Defensa Civil
+   Identidad: expediente tecnico. Azul acero, cifras en monoespaciada,
+   indicadores arriba, filtros por pestanas y tablas con icono por categoria.
+   ========================================================================== */
+
+body.tema-patrimonio {
+  --pt-ink: #0f132a;
+  --pt-navy: #0e1540;
+  --pt-steel: #18236b;
+  --pt-steel-600: #141d59;
+  --pt-steel-50: #eef5fa;
+  --pt-muted: #64748b;
+  --pt-faint: #94a3b8;
+  --pt-line: #dfe7ee;
+  --pt-surface: #f4f7fa;
+  --pt-ok: #15803d;     --pt-ok-bg: #dcfce7;
+  --pt-warn: #bc281a;   --pt-warn-bg: #fef3c7;
+  --pt-danger: #b91c1c; --pt-danger-bg: #fee2e2;
+  --pt-mute-bg: #eef2f7;
+  --pt-r: 14px;
+  --pt-shadow: 0 1px 2px rgba(15, 19, 42, .04), 0 10px 26px -14px rgba(15, 19, 42, .18);
+  --pt-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* variables que siguen usando el modal y las alertas de modulos.css */
+  --mod-navy-900: #0e1540;
+  --mod-navy-800: #11194d;
+  --mod-navy-700: #141d59;
+  --mod-blue-600: #18236b;
+  --mod-blue-500: #1b287c;
+  --mod-surface: #f3f7fa;
+  --mod-line: #d5e2eb;
+}
+
+.pt-page { display: flex; flex-direction: column; gap: 18px; }
+
+/* ── Barra superior ────────────────────────────────────────────────── */
+.pt-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.pt-top__kicker { font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--pt-steel); }
+.pt-top__text { font-size: .9rem; color: var(--pt-muted); }
+.pt-top__text strong { color: var(--pt-ink); }
+.pt-top__actions { display: inline-flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-left: auto; }
+body.tema-patrimonio .mod-launcher { margin: 0; padding: 0; background: none; border: none; box-shadow: none; }
+body.tema-patrimonio .mod-launcher__texto { display: none; }
+body.tema-patrimonio .mod-btn,
+body.tema-patrimonio .mod-btn--nuevo {
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--pt-steel), var(--pt-navy));
+  box-shadow: 0 8px 18px -8px rgba(14, 21, 64, .6);
+  padding: 11px 20px; font-weight: 700;
+}
+
+.pt-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  border: 1.5px solid transparent; border-radius: 10px; padding: 9px 16px;
+  font-size: .84rem; font-weight: 700; text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.pt-btn svg { width: 15px; height: 15px; }
+.pt-btn--navy { background: var(--pt-navy); color: #fff; }
+.pt-btn--navy:hover { background: #0a0f2e; color: #fff; }
+.pt-btn--ghost { background: #fff; border-color: #cfdae4; color: var(--pt-steel-600); }
+.pt-btn--ghost:hover { border-color: var(--pt-steel); color: var(--pt-steel); }
+.pt-btn--danger { background: #fff; border-color: #cfdae4; color: var(--pt-danger); }
+.pt-btn--danger:hover { background: var(--pt-danger-bg); border-color: #fca5a5; }
+.pt-btn--sm { padding: 6px 11px; font-size: .76rem; border-radius: 8px; }
+
+/* ── Indicadores ───────────────────────────────────────────────────── */
+.pt-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 1100px) { .pt-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px)  { .pt-kpis { grid-template-columns: 1fr; } }
+.pt-kpi {
+  display: flex; align-items: center; gap: 13px;
+  background: #fff; border: 1px solid var(--pt-line); border-radius: var(--pt-r);
+  padding: 16px 18px; box-shadow: var(--pt-shadow);
+}
+.pt-kpi__icon { width: 42px; height: 42px; border-radius: 11px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--pt-steel-50); color: var(--pt-steel); }
+.pt-kpi__icon svg { width: 19px; height: 19px; }
+.pt-kpi--ok .pt-kpi__icon { background: var(--pt-ok-bg); color: var(--pt-ok); }
+.pt-kpi--warn .pt-kpi__icon { background: var(--pt-warn-bg); color: var(--pt-warn); }
+.pt-kpi--mute .pt-kpi__icon { background: var(--pt-mute-bg); color: var(--pt-muted); }
+.pt-kpi__num { font-family: var(--pt-mono); font-size: 1.45rem; font-weight: 700; line-height: 1; color: var(--pt-ink); letter-spacing: -.02em; }
+.pt-kpi__num small { font-size: .8rem; color: var(--pt-muted); font-weight: 600; }
+.pt-kpi__lbl { margin-top: 4px; font-size: .72rem; font-weight: 700; color: var(--pt-muted); text-transform: uppercase; letter-spacing: .05em; }
+
+/* ── Tarjeta ───────────────────────────────────────────────────────── */
+.pt-card { background: #fff; border: 1px solid var(--pt-line); border-radius: var(--pt-r); box-shadow: var(--pt-shadow); overflow: hidden; }
+.pt-card__head { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 16px 20px; border-bottom: 1px solid var(--pt-line); }
+.pt-card__head h2 { margin: 0; font-size: .98rem; font-weight: 800; color: var(--pt-ink); }
+.pt-card__head p { margin: 2px 0 0; font-size: .78rem; color: var(--pt-muted); }
+.pt-card__body { padding: 20px; }
+
+/* Pestanas de filtro + buscador */
+.pt-filters { display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap; padding: 14px 20px; background: var(--pt-surface); border-bottom: 1px solid var(--pt-line); }
+.pt-filters label { display: block; font-size: .68rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--pt-muted); margin-bottom: 5px; }
+.pt-tabs { display: inline-flex; gap: 4px; background: #fff; border: 1px solid var(--pt-line); border-radius: 11px; padding: 4px; flex-wrap: wrap; }
+.pt-tabs a { padding: 7px 12px; border-radius: 8px; font-size: .78rem; font-weight: 700; color: var(--pt-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.pt-tabs a svg { width: 13px; height: 13px; }
+.pt-tabs a small { font-weight: 600; color: var(--pt-faint); }
+.pt-tabs a:hover { color: var(--pt-steel); }
+.pt-tabs a.is-on { background: var(--pt-navy); color: #fff; }
+.pt-tabs a.is-on small { color: rgba(255,255,255,.7); }
+.pt-search { position: relative; flex: 1 1 240px; }
+.pt-search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: var(--pt-faint); pointer-events: none; }
+.pt-search input { padding-left: 36px; }
+.pt-input, .pt-select {
+  width: 100%; border: 1.5px solid #cfdae4; border-radius: 10px; background: #fff;
+  padding: 9px 12px; font-size: .88rem; color: var(--pt-ink); font-family: inherit;
+}
+.pt-input:focus, .pt-select:focus { outline: none; border-color: var(--pt-steel); box-shadow: 0 0 0 4px rgba(24, 35, 107, .14); }
+
+/* ── Tabla ─────────────────────────────────────────────────────────── */
+.pt-table-wrap { overflow-x: auto; }
+.pt-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: .87rem; }
+.pt-table thead th {
+  background: #fff; color: var(--pt-muted); font-size: .66rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+  padding: 11px 16px; text-align: left; border-bottom: 2px solid var(--pt-line); white-space: nowrap;
+}
+.pt-table tbody td { padding: 13px 16px; border-bottom: 1px solid var(--pt-line); color: var(--pt-ink); vertical-align: middle; }
+.pt-table tbody tr:last-child td { border-bottom: none; }
+.pt-table tbody tr:hover td { background: #fafcfe; }
+.pt-table .pt-right { text-align: right; white-space: nowrap; }
+.pt-table .pt-num { font-family: var(--pt-mono); font-weight: 600; text-align: right; white-space: nowrap; }
+.pt-code { font-family: var(--pt-mono); font-size: .76rem; font-weight: 700; color: var(--pt-steel-600); background: var(--pt-steel-50); padding: 4px 8px; border-radius: 6px; white-space: nowrap; }
+.pt-name { font-weight: 700; color: var(--pt-ink); line-height: 1.25; }
+.pt-name a { color: inherit; text-decoration: none; }
+.pt-name a:hover { color: var(--pt-steel); }
+.pt-sub { font-size: .76rem; color: var(--pt-muted); margin-top: 2px; }
+.pt-cat { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; font-size: .84rem; color: var(--pt-ink); }
+.pt-cat__icon { width: 30px; height: 30px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; background: var(--pt-surface); color: var(--pt-steel); flex-shrink: 0; }
+.pt-cat__icon svg { width: 15px; height: 15px; }
+.pt-cat--inmueble .pt-cat__icon   { background: #e0f2fe; color: #192572; }
+.pt-cat--mobiliario .pt-cat__icon { background: #fef3c7; color: #bc281a; }
+.pt-cat--equipo .pt-cat__icon     { background: #ede9fe; color: #6d28d9; }
+.pt-cat--vehiculo .pt-cat__icon   { background: #dcfce7; color: #15803d; }
+.pt-pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: .72rem; font-weight: 800; white-space: nowrap; }
+.pt-pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.pt-pill--ok { background: var(--pt-ok-bg); color: var(--pt-ok); }
+.pt-pill--warn { background: var(--pt-warn-bg); color: var(--pt-warn); }
+.pt-pill--mute { background: var(--pt-mute-bg); color: var(--pt-muted); }
+.pt-pill--steel { background: var(--pt-steel-50); color: var(--pt-steel-600); }
+.pt-pill--danger { background: var(--pt-danger-bg); color: var(--pt-danger); }
+.pt-chip { display: inline-flex; align-items: center; gap: 5px; font-size: .74rem; font-weight: 700; color: var(--pt-steel-600); background: var(--pt-surface); border: 1px solid var(--pt-line); border-radius: 7px; padding: 3px 9px; white-space: nowrap; }
+.pt-chip svg { width: 12px; height: 12px; color: var(--pt-faint); }
+.pt-acts { display: inline-flex; gap: 6px; align-items: center; }
+.pt-empty { padding: 52px 20px; text-align: center; color: var(--pt-muted); font-size: .9rem; }
+.pt-empty__icon { width: 54px; height: 54px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--pt-surface); color: var(--pt-steel); margin-bottom: 10px; }
+.pt-empty__icon svg { width: 22px; height: 22px; }
+.pt-empty strong { display: block; color: var(--pt-ink); margin-bottom: 3px; }
+.pt-pager { padding: 12px 20px; border-top: 1px solid var(--pt-line); }
+.pt-pager .pagination { margin: 0; }
+
+/* ── Ficha del activo (historial) ──────────────────────────────────── */
+.pt-sheet { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); background: #fff; border: 1px solid var(--pt-line); border-radius: var(--pt-r); box-shadow: var(--pt-shadow); overflow: hidden; }
+@media (max-width: 900px) { .pt-sheet { grid-template-columns: 1fr; } }
+.pt-sheet__main { display: flex; gap: 18px; align-items: flex-start; padding: 22px; }
+.pt-sheet__icon { width: 60px; height: 60px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; background: var(--pt-steel-50); color: var(--pt-steel); }
+.pt-sheet__icon svg { width: 26px; height: 26px; }
+.pt-sheet__name { font-size: 1.15rem; font-weight: 800; color: var(--pt-ink); line-height: 1.2; }
+.pt-sheet__chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.pt-sheet__obs { margin-top: 12px; font-size: .84rem; color: var(--pt-muted); }
+.pt-sheet__side { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-left: 1px solid var(--pt-line); background: var(--pt-surface); }
+@media (max-width: 900px) { .pt-sheet__side { border-left: none; border-top: 1px solid var(--pt-line); } }
+.pt-meter { padding: 18px 16px; }
+.pt-meter + .pt-meter { border-left: 1px solid var(--pt-line); }
+.pt-meter__lbl { font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--pt-muted); }
+.pt-meter__val { font-family: var(--pt-mono); font-size: 1.1rem; font-weight: 700; color: var(--pt-ink); margin-top: 4px; line-height: 1.1; }
+.pt-meter__val small { font-size: .72rem; color: var(--pt-muted); font-family: inherit; }
+
+/* Linea de tiempo de mantenimientos / actividades */
+.pt-tl { position: relative; padding-left: 30px; }
+.pt-tl::before { content: ''; position: absolute; left: 11px; top: 10px; bottom: 10px; width: 2px; background: var(--pt-line); }
+.pt-tl__item { position: relative; display: grid; grid-template-columns: 74px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 14px 0; border-bottom: 1px solid var(--pt-line); }
+.pt-tl__item:last-child { border-bottom: none; }
+.pt-tl__dot { position: absolute; left: -24px; top: 20px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 3px solid var(--pt-steel); }
+.pt-tl__item.is-correctivo .pt-tl__dot { border-color: #d97706; }
+.pt-tl__date { font-family: var(--pt-mono); font-size: .8rem; font-weight: 700; color: var(--pt-steel-600); padding-top: 3px; }
+.pt-tl__title { font-weight: 700; color: var(--pt-ink); }
+.pt-tl__meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.pt-tl__text { font-size: .84rem; color: var(--pt-muted); margin-top: 4px; }
+.pt-tl__cost { font-family: var(--pt-mono); font-weight: 700; color: var(--pt-ink); white-space: nowrap; text-align: right; }
+.pt-tl__cost small { display: block; font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--pt-muted); font-family: inherit; }
+
+/* ── Defensa Civil: tipos con color ────────────────────────────────── */
+.pt-tipo { width: 40px; height: 40px; border-radius: 11px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pt-tipo svg { width: 18px; height: 18px; }
+.pt-tipo--simulacro    { background: #fee2e2; color: #b91c1c; }
+.pt-tipo--inspeccion   { background: #e0f2fe; color: #192572; }
+.pt-tipo--senalizacion { background: #fef3c7; color: #bc281a; }
+.pt-tipo--extintores   { background: #ffedd5; color: #bc281a; }
+.pt-date { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 11px; background: var(--pt-steel-50); color: var(--pt-steel-600); font-family: var(--pt-mono); font-weight: 700; line-height: 1; }
+.pt-date b { font-size: 1.05rem; }
+.pt-date small { font-size: .58rem; letter-spacing: .06em; text-transform: uppercase; margin-top: 2px; }
+.pt-next { font-size: .8rem; color: var(--pt-muted); white-space: nowrap; }
+.pt-next.is-late { color: var(--pt-danger); font-weight: 700; }
+.pt-next.is-soon { color: var(--pt-warn); font-weight: 700; }
+
+/* ── Formularios del modal ─────────────────────────────────────────── */
+body.tema-patrimonio .mod-modal .modal-content { border-radius: 16px; }
+body.tema-patrimonio .mod-form label { font-size: .7rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--pt-muted); margin-bottom: 5px; }
+body.tema-patrimonio .mod-form .form-control,
+body.tema-patrimonio .mod-form .form-select { border-radius: 10px; border: 1.5px solid #cfdae4; padding: 9px 12px; }
+body.tema-patrimonio .mod-form .form-control:focus,
+body.tema-patrimonio .mod-form .form-select:focus { border-color: var(--pt-steel); box-shadow: 0 0 0 4px rgba(24, 35, 107, .14); }
+.pt-form-section { grid-column: 1 / -1; font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--pt-steel); border-bottom: 1px solid var(--pt-line); padding-bottom: 6px; margin-top: 6px; }

@@ -1,0 +1,89 @@
+/* ==========================================================================
+   TEMA - Modulo 8, Comedor "Realino"
+   Identidad: el servicio de mesa. Aqua claro, formas redondas y las cifras
+   presentadas como platos servidos sobre un mantel.
+   Se apoya en modulos.css y solo redefine lo que da caracter.
+   ========================================================================== */
+
+body.tema-comedor {
+  --mod-navy-900: #063f4a;
+  --mod-navy-800: #085b68;
+  --mod-navy-700: #0b7a88;
+  --mod-blue-600: #0d9aa5;
+  --mod-blue-500: #12b3ba;
+  --mod-sky-500: #2ecfd0;
+  --mod-sky-400: #6ee2df;
+  --mod-surface: #f2fbfb;
+  --mod-line: #d3ecec;
+}
+
+/* Las cifras son platos: circulo blanco sobre fondo aqua */
+body.tema-comedor .mod-stats {
+  gap: 18px;
+}
+
+body.tema-comedor .mod-stat {
+  border-left: none;
+  border-radius: 18px;
+  text-align: center;
+  padding: 22px 18px;
+  background: linear-gradient(180deg, #ffffff, var(--mod-surface));
+  border: 1px solid var(--mod-line);
+  box-shadow: 0 6px 18px rgba(8, 91, 104, .1);
+}
+
+body.tema-comedor .mod-stat__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 74px;
+  height: 74px;
+  padding: 0 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--mod-blue-600);
+  font-size: 1.35rem;
+  color: var(--mod-navy-800);
+  box-shadow: inset 0 0 0 6px rgba(46, 207, 208, .12);
+}
+
+body.tema-comedor .mod-stat.s2 .mod-stat__num { border-color: var(--mod-sky-500); }
+body.tema-comedor .mod-stat.s3 .mod-stat__num { border-color: #16a34a; }
+body.tema-comedor .mod-stat.s4 .mod-stat__num { border-color: var(--mod-navy-700); }
+
+body.tema-comedor .mod-stat__label {
+  margin-top: 12px;
+}
+
+/* Paneles redondeados, sin esquinas duras */
+body.tema-comedor .mod-card {
+  border-radius: 20px;
+}
+
+body.tema-comedor .mod-card__head {
+  border-bottom: 2px dashed var(--mod-line);
+  background: #fff;
+}
+
+body.tema-comedor .mod-table thead th {
+  background: var(--mod-surface);
+  border-bottom: 2px solid var(--mod-blue-600);
+}
+
+body.tema-comedor .mod-chip {
+  border-radius: 999px;
+  background: #d8f4f4;
+  color: var(--mod-navy-800);
+}
+
+body.tema-comedor .mod-btn {
+  border-radius: 999px;
+}
+
+body.tema-comedor .mod-btn-ghost {
+  border-radius: 999px;
+}
+
+body.tema-comedor .mod-gallery__item {
+  border-radius: 18px;
+}
