@@ -1,0 +1,8 @@
+# Hostinger: si el dominio apunta a la raiz del repo (public_html), todo se
+# sirve desde /public. Si apuntas el Document Root a /public, este archivo no se usa.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(\.env|\.git|storage|vendor|bootstrap|config|database|routes|app|tests) - [F,L]
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
