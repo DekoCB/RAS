@@ -1,6 +1,6 @@
 @php
-    $nombre = $institucion->nombre ?: 'Real School';
-    $sigla = $institucion->sigla ?: 'Real School';
+    $nombre = $institucion->nombre ?: 'R.A.S';
+    $sigla = $institucion->sigla ?: 'R.A.S';
 
     $telefonos = array_values(array_filter([
         $institucion->telefono_central,
@@ -21,8 +21,8 @@
     <meta name="description" content="@yield('meta', 'Preinscripción en línea para el proceso de admisión.')">
     <meta name="robots" content="@yield('robots', 'index,follow')">
 
-    <link rel="icon" type="image/png" href="{{ url('images/favicon-real-school.png') }}">
-    <link rel="apple-touch-icon" href="{{ url('images/favicon-real-school.png') }}">
+    <link rel="icon" type="image/png" href="{{ url('images/favicon-ras.png') }}">
+    <link rel="apple-touch-icon" href="{{ url('images/favicon-ras.png') }}">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="stylesheet"

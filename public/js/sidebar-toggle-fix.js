@@ -1,4 +1,4 @@
-// Custom sidebar toggle enhancement for REYSCHOOL project
+// Custom sidebar toggle enhancement for R.A.S project
 // This file adds responsive sidebar toggle functionality
 
 document.addEventListener('DOMContentLoaded', function () {

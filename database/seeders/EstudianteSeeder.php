@@ -14,7 +14,7 @@ class EstudianteSeeder extends Seeder
     public function run(): void
     {
         $user = User::firstOrCreate(
-            ['email' => 'estudiante@reyschool.test'],
+            ['email' => 'estudiante@ras.test'],
             [
                 'name' => 'Estudiante Demo',
                 'dni' => self::ESTUDIANTE_DNI,

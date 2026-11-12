@@ -30,8 +30,8 @@ class InstitucionSeeder extends Seeder
         $institucion = Institucion::firstOrNew([]);
 
         $institucion->fill([
-            'nombre'  => 'I.E.P. Real School C.A.M.',
-            'sigla'   => 'Real School',
+            'nombre'  => 'R.A.S',
+            'sigla'   => 'R.A.S',
             'lema'    => 'La Real Educación es revelada sobrenaturalmente por la inspiración Divina',
             'ciudad'  => 'Arequipa',
             'vision'  => 'Desarrollar el potencial de los estudiantes desde la infancia, formando líderes '
@@ -55,7 +55,7 @@ class InstitucionSeeder extends Seeder
                 'Primaria'   => '1755172',
                 'Secundaria' => '1799857',
             ],
-            'himno_titulo' => 'Himno Realino',
+            'himno_titulo' => 'Himno R.A.S',
             'himno_autor'  => 'Dionisio Alejandro Fernández Tanga',
         ]);
 
@@ -95,7 +95,7 @@ class InstitucionSeeder extends Seeder
             ['Familia unida, estudiante íntegro', null],
             ['Una mente fuerte, decisión sana', null],
             ['La fe persevera, una generación de legados', null],
-            ['Familia Realina unida', 'Restaurante'],
+            ['Familia R.A.S unida', 'Restaurante'],
             ['Olviden el pasado, no humillen', 'Psicología'],
             ['Enseñen, no humillen', 'Karate'],
         ];

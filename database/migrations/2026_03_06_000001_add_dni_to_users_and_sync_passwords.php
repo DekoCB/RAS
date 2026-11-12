@@ -64,7 +64,7 @@ return new class extends Migration
     private function syncFromKnownUsers(): void
     {
         $knownDniByEmail = [
-            'jeanpiaget_oxa@hotmail.com' => '20099909',
+            'director@ras.edu.pe' => '20099909',
             'mirellacantalicioperez@gmail.com' => '71202328',
             'katissazehnder15@gmail.com' => '77498515',
         ];

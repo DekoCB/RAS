@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="R.A.S">
+  <title>R.A.S</title>
+  <circle cx="256" cy="256" r="256" fill="#60282b"/>
+  <path d="M256 70 L400 118 V250 C400 340 340 400 256 442 C172 400 112 340 112 250 V118 Z" fill="#fff"/>
+  <path d="M256 86 L386 128 V250 C386 330 332 386 256 426 C180 386 126 330 126 250 V128 Z" fill="#0f1742"/>
+  <path d="M256 86 L256 426 C180 386 126 330 126 250 V128 Z" fill="none"/>
+  <path d="M140 140 L244 106 V246 H140 Z" fill="#e83222"/>
+  <path d="M268 266 H372 V250 C372 322 326 370 268 404 Z" fill="#e83222"/>
+  <path d="M268 106 L372 140 V246 H268 Z" fill="#0f1742"/>
+  <path d="M140 266 H244 V404 C186 370 140 322 140 250 Z" fill="#0f1742"/>
+  <text x="192" y="212" font-family="Georgia,serif" font-size="96" font-weight="700" fill="#fff" text-anchor="middle">R</text>
+  <text x="320" y="372" font-family="Georgia,serif" font-size="96" font-weight="700" fill="#fff" text-anchor="middle">A</text>
+</svg>

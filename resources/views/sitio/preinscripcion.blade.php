@@ -53,8 +53,8 @@
                         </div>
                     @else
                         <div class="sw-wizard__banner sw-wizard__banner--dibujado">
-                            <img class="sw-wizard__escudo" src="{{ url('images/logo-real-school.png') }}"
-                                alt="{{ $institucion->nombre ?: 'Real School' }}">
+                            <img class="sw-wizard__escudo" src="{{ url('images/logo-ras.png') }}"
+                                alt="{{ $institucion->nombre ?: 'R.A.S' }}">
                             <span class="sw-wizard__banner-text">
                                 <strong>Admision {{ $anio }}</strong>
                                 <span>{{ $lema }}</span>
@@ -349,7 +349,7 @@
                                     <input type="checkbox" name="acepta_terminos" value="1" required
                                         data-paso-campo="5" @checked(old('acepta_terminos'))>
                                     <span>
-                                        Autorizo a {{ $institucion->nombre ?: 'Real School' }} a tratar estos datos
+                                        Autorizo a {{ $institucion->nombre ?: 'R.A.S' }} a tratar estos datos
                                         con el unico fin de gestionar el proceso de admision y a contactarme por
                                         telefono, WhatsApp o correo. <span class="req">*</span>
                                     </span>

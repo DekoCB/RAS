@@ -10,7 +10,7 @@
         $institucion->telefono_secundaria,
     ]));
 
-    $nombreColegio = $institucion->nombre ?: 'Real School';
+    $nombreColegio = $institucion->nombre ?: 'R.A.S';
     $anioEscolar = $postulante->anioEscolar?->nombre ?? '--';
 
     $bajoMembrete = 'Institucion Educativa Privada'
@@ -23,7 +23,7 @@
 
             {{-- Membrete: solo aparece en el papel --}}
             <header class="sw-doc__membrete">
-                <img src="{{ url('images/logo-real-school.png') }}" alt="{{ $nombreColegio }}">
+                <img src="{{ url('images/logo-ras.png') }}" alt="{{ $nombreColegio }}">
                 <div class="sw-doc__membrete-texto">
                     <strong>{{ $nombreColegio }}</strong>
                     <span>{{ $bajoMembrete }}</span>

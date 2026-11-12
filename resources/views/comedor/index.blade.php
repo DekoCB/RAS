@@ -1,7 +1,7 @@
 @extends('layouts.mantis')
 
-@section('title', 'Comedor Realino | R.A.S')
-@section('page-title', 'Comedor Realino')
+@section('title', 'Comedor R.A.S | R.A.S')
+@section('page-title', 'Comedor R.A.S')
 @section('body-class', 'role-superadmin tema-comedor')
 
 @push('styles')

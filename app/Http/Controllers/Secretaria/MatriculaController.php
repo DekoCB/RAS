@@ -2390,9 +2390,9 @@ class MatriculaController extends Controller
     private function buscarUsuarioEstudiantePorDni(string $dni): ?User
     {
         $usuarioLogin = $this->usuarioLoginDesdeDni($dni);
-        $correoInstitucional = $usuarioLogin . '@reyschool.edu.pe';
+        $correoInstitucional = $usuarioLogin . '@ras.edu.pe';
         // Usuarios creados antes del cambio de marca conservan el dominio anterior
-        $correoInstitucionalLegacy = $usuarioLogin . '@jeanpiaget.edu.pe';
+        $correoInstitucionalLegacy = $usuarioLogin . '@ras.edu.pe';
 
         return User::where('dni', $usuarioLogin)->first()
             ?? User::where('email', $usuarioLogin)->first()

@@ -443,7 +443,7 @@
                             <li class="{{ request()->routeIs('comedor.*') ? 'jp-sub-active' : '' }}">
                                 <a href="{{ route('comedor.index') }}">
                                     <span class="jp-sub-dot"></span>
-                                    Comedor Realino
+                                    Comedor R.A.S
                                 </a>
                             </li>
                         @endcan
@@ -467,7 +467,7 @@
                             <li class="{{ request()->routeIs('academia.*') ? 'jp-sub-active' : '' }}">
                                 <a href="{{ route('academia.index') }}">
                                     <span class="jp-sub-dot"></span>
-                                    Real Academia
+                                    Academia R.A.S
                                 </a>
                             </li>
                         @endcan

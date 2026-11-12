@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 /**
  * MODULO 9 - Psicologia (RF-50, RF-51)
- * MODULO 10 - Real Academia (RF-52 a RF-55)
+ * MODULO 10 - Academia R.A.S (RF-52 a RF-55)
  * MODULO 11 - Pastoral (RF-56)
  */
 return new class extends Migration

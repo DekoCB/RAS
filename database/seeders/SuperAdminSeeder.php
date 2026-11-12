@@ -11,17 +11,17 @@ class SuperAdminSeeder extends Seeder
     private const SUPERADMINS = [
         [
             'name'  => 'Super Admin',
-            'email' => 'admin@sistemaderaul.test',
+            'email' => 'admin@ras.test',
             'dni'   => '23705407',
         ],
         [
-            'name'  => 'Sayuri Gozar',
-            'email' => 'gozarsayuri@gmail.com',
+            'name'  => 'Administrador R.A.S',
+            'email' => 'admin@ras.edu.pe',
             'dni'   => '73329112',
         ],
         [
             'name'     => 'Administrador',
-            'email'    => 'admin@reyschool.edu.pe',
+            'email'    => 'admin@ras.edu.pe',
             'dni'      => 'admin',
             'password' => 'admin123',
         ],

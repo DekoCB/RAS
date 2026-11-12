@@ -21,7 +21,7 @@ class DocenteOtraSeccionSeeder extends Seeder
             return;
         }
 
-        $docente = User::where('email', 'docente@reyschool.test')->first()
+        $docente = User::where('email', 'docente@ras.test')->first()
             ?? User::role('Docente')->orderBy('id')->first();
 
         if (!$docente) {

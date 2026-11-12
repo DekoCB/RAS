@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 /**
- * MODULO 10 - Real Academia preuniversitaria (RF-52 a RF-55).
+ * MODULO 10 - Academia R.A.S preuniversitaria (RF-52 a RF-55).
  *
  * Funciona de 4:00 a 5:30 p.m. de lunes a viernes (RF-52) y cobra
  * pensiones distintas a los alumnos del colegio y a los libres (RF-54).

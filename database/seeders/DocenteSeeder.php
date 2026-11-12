@@ -11,9 +11,9 @@ class DocenteSeeder extends Seeder
 {
     public function run(): void
     {
-        // Todos los docentes y personal del colegio REYSCHOOL - 2026
+        // Todos los docentes y personal del colegio R.A.S - 2026
         // Contraseña: DNI de cada docente
-        // Email generado (*@reyschool.edu.pe) para quienes no tienen email registrado
+        // Email generado (*@ras.edu.pe) para quienes no tienen email registrado
         $docentes = [
 
             // ── INICIAL - Tutoras de aula ──────────────────────────────────────────
@@ -36,8 +36,8 @@ class DocenteSeeder extends Seeder
                 'cargo'       => 'Tutora Inicial 3 años',
             ],
             [
-                // Sin email registrado - se usa DNI@reyschool.edu.pe
-                'email'       => '48418283@reyschool.edu.pe',
+                // Sin email registrado - se usa DNI@ras.edu.pe
+                'email'       => '48418283@ras.edu.pe',
                 'name'        => 'Milagros Laura Torres Sosa',
                 'nombres'     => 'Milagros Laura',
                 'apellidos'   => 'Torres Sosa',
@@ -251,8 +251,8 @@ class DocenteSeeder extends Seeder
                 'cargo'       => 'Docente Educacion Fisica',
             ],
             [
-                // Sin email registrado - se usa DNI@reyschool.edu.pe
-                'email'       => '4304740@reyschool.edu.pe',
+                // Sin email registrado - se usa DNI@ras.edu.pe
+                'email'       => '4304740@ras.edu.pe',
                 'name'        => 'Heddy Luz Ilave Morales',
                 'nombres'     => 'Heddy Luz',
                 'apellidos'   => 'Ilave Morales',

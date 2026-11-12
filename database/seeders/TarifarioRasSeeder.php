@@ -14,18 +14,18 @@ use Illuminate\Database\Seeder;
  * contradictorios (220 estandar / 220-250-260 / 240 / 270) y su propia
  * seccion 8 pide validarlos con el colegio antes de cargarlos.
  */
-class TarifarioRealSchoolSeeder extends Seeder
+class TarifarioRasSeeder extends Seeder
 {
     /** [clave interna, nombre visible, monto] */
     private const CONCEPTOS = [
         ['admision',         'Cuota de ingreso (por única vez)',       80], // Art. 54 del Reglamento Interno
         ['guias_agenda',     'Guias y agenda escolar',                420],
-        ['comedor',          'Comedor Realino - estudiante',            5],
-        ['comedor_docente',  'Comedor Realino - docente',               5],
+        ['comedor',          'Comedor R.A.S - estudiante',            5],
+        ['comedor_docente',  'Comedor R.A.S - docente',               5],
         ['fotocheck',        'Carnet / fotocheck con QR',              20],
         ['recuperacion',     'Examen de recuperacion bimestral',       10],
-        ['academia',         'Real Academia - pension alumno',        100],
-        ['academia_libre',   'Real Academia - pension estudiante libre', 200],
+        ['academia',         'Academia R.A.S - pension alumno',        100],
+        ['academia_libre',   'Academia R.A.S - pension estudiante libre', 200],
     ];
 
     public function run(): void

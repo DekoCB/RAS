@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * MODULO 8 - Comedor "Realino".
+ * MODULO 8 - Comedor R.A.S.
  * RF-47: cobro del servicio a estudiantes y docentes.
  * RF-48: recepcion diaria de almuerzos, incluido quien trae el suyo.
  * RF-49: evidencia en foto y video del servicio.

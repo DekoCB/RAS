@@ -28,7 +28,7 @@ class CatalogoSeeder extends Seeder
             $anio->update(['activo' => true]);
         }
 
-        // Grados y secciones reales del colegio REYSCHOOL
+        // Grados y secciones reales del colegio R.A.S
         // Inicial: 4 grados, 1 sección cada uno (A)
         // Primaria: 6 grados, 1ro-4to con 2 secciones (A y B), 5to-6to con 1 sección (A)
         $mallaAcademica = [
@@ -91,7 +91,7 @@ class CatalogoSeeder extends Seeder
             }
         }
 
-        // Cursos del colegio REYSCHOOL
+        // Cursos del colegio R.A.S
         $cursosInicial = [
             'Comunicacion',
             'Matematica',

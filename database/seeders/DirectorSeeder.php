@@ -11,7 +11,7 @@ class DirectorSeeder extends Seeder
     public function run(): void
     {
         $user = User::firstOrCreate(
-            ['email' => 'jeanpiaget_oxa@hotmail.com'],
+            ['email' => 'director@ras.edu.pe'],
             [
                 'name'     => 'Olivia Yanina Sillo Jimenez',
                 'dni'      => '20099909',

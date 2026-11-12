@@ -25,3 +25,4 @@ Thumbs.db
 *.zip
 .env.hostinger
 .claude/settings.local.json
+.claude/

@@ -1,7 +1,7 @@
 @extends('layouts.mantis')
 
-@section('title', 'Real Academia | R.A.S')
-@section('page-title', 'Real Academia')
+@section('title', 'Academia R.A.S | R.A.S')
+@section('page-title', 'Academia R.A.S')
 @section('body-class', 'role-superadmin tema-academia')
 
 @push('styles')

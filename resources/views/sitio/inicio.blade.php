@@ -1,6 +1,6 @@
 @php
-    $nombre = $institucion->nombre ?: 'Real School';
-    $sigla = $institucion->sigla ?: 'Real School';
+    $nombre = $institucion->nombre ?: 'R.A.S';
+    $sigla = $institucion->sigla ?: 'R.A.S';
     $codigos = $institucion->codigos_modulares ?? [];
 
     $telefonos = array_values(array_filter([
@@ -29,8 +29,8 @@
     <meta name="description"
         content="{{ $institucion->lema ?: 'Educación integral con formación en valores.' }}">
 
-    <link rel="icon" type="image/png" href="{{ url('images/favicon-real-school.png') }}">
-    <link rel="apple-touch-icon" href="{{ url('images/favicon-real-school.png') }}">
+    <link rel="icon" type="image/png" href="{{ url('images/favicon-ras.png') }}">
+    <link rel="apple-touch-icon" href="{{ url('images/favicon-ras.png') }}">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="stylesheet"
@@ -287,7 +287,7 @@
             <div class="sw-shell">
                 <div class="sw-section__head sw-reveal">
                     <span class="sw-eyebrow sw-eyebrow--light">Nuestros valores</span>
-                    <h2>Lo que sostiene a la familia Realina</h2>
+                    <h2>Lo que sostiene a la familia R.A.S</h2>
                     <p>Principios que se viven a diario en el aula, en casa y en la comunidad.</p>
                 </div>
 
@@ -311,7 +311,7 @@
         <div class="sw-shell">
             <div class="sw-section__head sw-reveal">
                 <span class="sw-eyebrow">Conócenos</span>
-                <h2>Vive la experiencia Realina</h2>
+                <h2>Vive la experiencia R.A.S</h2>
                 <p>Fotos, videos y el himno que nos representan como familia {{ $sigla }}.</p>
             </div>
 
@@ -370,7 +370,7 @@
                         <div class="sw-tiktok-grid">
                     @endif
 
-                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@realschool/video/{{ $videoId }}"
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ras/video/{{ $videoId }}"
                         data-video-id="{{ $videoId }}" style="max-width: 325px; min-width: 260px;">
                         <section></section>
                     </blockquote>
@@ -392,7 +392,7 @@
             {{-- Himno --}}
             <div class="sw-tabpanel" id="tab-himno" role="tabpanel">
                 <div class="sw-himno">
-                    <h3>{{ $institucion->himno_titulo ?: 'Himno Realino' }}</h3>
+                    <h3>{{ $institucion->himno_titulo ?: 'Himno R.A.S' }}</h3>
                     @if ($institucion->himno_autor)
                         <p class="sw-himno__autor">Letra: {{ $institucion->himno_autor }}</p>
                     @endif
@@ -405,7 +405,7 @@
                             defendemos con justicia, sabiduría y verdad
                         </p>
                         <p class="sw-himno__coro">
-                            ¡¡Adelante Realino<br>
+                            ¡¡Adelante R.A.S<br>
                             Que la meta cerca está<br>
                             El triunfar es su destino<br>
                             Generación tras generación<br>
@@ -418,7 +418,7 @@
                             ¡No temeré! A la cumbre sabemos llegar
                         </p>
                         <p class="sw-himno__coro">
-                            ¡Adelante! Realino<br>
+                            ¡Adelante! R.A.S<br>
                             Que la meta cerca está<br>
                             El triunfar es su destino<br>
                             Generación tras generación<br>
@@ -431,7 +431,7 @@
                             Y el futuro así nos juzgará
                         </p>
                         <p class="sw-himno__coro">
-                            ¡¡Adelante Realino<br>
+                            ¡¡Adelante R.A.S<br>
                             Que la meta cerca está<br>
                             El triunfar es su destino<br>
                             Generación tras generación<br>
@@ -712,7 +712,7 @@
                     </div>
                 @else
                     <div class="sw-modal__banner sw-modal__banner--dibujado">
-                        <img class="sw-modal__escudo" src="{{ url('images/logo-real-school.png') }}" alt="{{ $nombre }}">
+                        <img class="sw-modal__escudo" src="{{ url('images/logo-ras.png') }}" alt="{{ $nombre }}">
                         <h2 class="sw-modal__anio serif">Admisión {{ $campanaAdmision->nombre }}</h2>
                         <p class="sw-modal__lema">{{ $institucion->lema ?: 'Formando líderes íntegros' }}</p>
                     </div>

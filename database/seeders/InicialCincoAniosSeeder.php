@@ -555,7 +555,7 @@ class InicialCincoAniosSeeder extends Seeder
 
     private function emailEstudiante(string $dni): string
     {
-        return $dni . '@reyschool.edu.pe';
+        return $dni . '@ras.edu.pe';
     }
 
     private function normalizarDni(?string $dni): ?string

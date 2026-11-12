@@ -621,7 +621,7 @@ Route::middleware(['auth', 'permission:biblioteca.ver'])
         });
     });
 
-// MODULO 8 - Comedor Realino (RF-47, RF-48, RF-49)
+// MODULO 8 - Comedor R.A.S (RF-47, RF-48, RF-49)
 Route::middleware(['auth', 'permission:comedor.ver'])
     ->prefix('comedor')
     ->name('comedor.')
@@ -781,7 +781,7 @@ Route::middleware(['auth', 'permission:psicologia.ver'])
         });
     });
 
-// MODULO 10 - Real Academia (RF-52 a RF-55)
+// MODULO 10 - Academia R.A.S (RF-52 a RF-55)
 Route::middleware(['auth', 'permission:academia.ver'])
     ->prefix('academia')
     ->name('academia.')

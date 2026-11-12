@@ -15,7 +15,7 @@ use Spatie\Permission\PermissionRegistrar;
  * Se anade sobre lo existente: no elimina ni reasigna los roles previos
  * (SuperAdmin, Director, Secretaria, Auxiliar, Docente, Estudiante).
  */
-class RolesRealSchoolSeeder extends Seeder
+class RolesRasSeeder extends Seeder
 {
     private const PERMISOS_NUEVOS = [
         // Modulo institucional / sedes
@@ -44,7 +44,7 @@ class RolesRealSchoolSeeder extends Seeder
         // Modulo 9 - Psicologia (RNF-05: acceso restringido)
         'psicologia.ver',
         'psicologia.gestionar',
-        // Modulo 10 - Real Academia
+        // Modulo 10 - Academia R.A.S
         'academia.ver',
         'academia.gestionar',
         // Modulo 11 - Pastoral

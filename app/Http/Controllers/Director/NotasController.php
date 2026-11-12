@@ -588,7 +588,7 @@ class NotasController extends Controller
 
         // Título
         $sheet->mergeCells('A1:G1');
-        $sheet->setCellValue('A1', 'ACTA DE CIERRE DE NOTAS - REYSCHOOL');
+        $sheet->setCellValue('A1', 'ACTA DE CIERRE DE NOTAS - R.A.S');
         $sheet->getStyle('A1')->applyFromArray([
             'font'      => ['bold' => true, 'size' => 14, 'color' => ['rgb' => 'FFFFFF']],
             'fill'      => ['fillType' => 'solid', 'startColor' => ['rgb' => '1A3558']],

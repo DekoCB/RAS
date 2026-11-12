@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 /**
  * Carga los cursos del colegio y asigna su docente en cada seccion.
  *
- * Origen: el cuadro "PROFESORES REAL SCHOOL" que entrego el colegio, donde
+ * Origen: el cuadro "PROFESORES R.A.S" que entrego el colegio, donde
  * cada profesor tiene su area y los cursos que dicta.
  *
  * El cuadro no dice en que secciones dicta cada uno, asi que se aplica el

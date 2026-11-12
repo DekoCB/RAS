@@ -503,7 +503,7 @@
         <div class="doc__empresa">
             <div class="doc__empresa-block">
                 <div class="doc__empresa-row"><span class="lbl">Institución:</span><span class="val">R.A.S</span></div>
-                <div class="doc__empresa-row"><span class="lbl">Correo:</span><span class="val">secretaria@reyschool.edu.pe</span></div>
+                <div class="doc__empresa-row"><span class="lbl">Correo:</span><span class="val">secretaria@ras.edu.pe</span></div>
                 <div class="doc__empresa-row"><span class="lbl">RUC:</span><span class="val">—</span></div>
             </div>
             <div class="doc__empresa-block">

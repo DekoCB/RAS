@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
- * Plantilla de personal de I.E.P. Real School C.A.M.
+ * Plantilla de personal de R.A.S
  *
- * Origen: "PROFESORES REAL SCHOOL (2) (3).xlsx" entregado por el colegio.
+ * Origen: "PROFESORES R.A.S (2) (3).xlsx" entregado por el colegio.
  *
  * Criterios aplicados al pasar el Excel a datos:
  *  - Los nombres del Excel vienen en formatos mezclados ("APELLIDOS, Nombres"
@@ -19,12 +19,12 @@ use Illuminate\Support\Str;
  *    asi que nombres y apellidos se separan aqui uno por uno, no por regla.
  *  - Quien aparece repetido (docente + coordinador, por ejemplo) se registra
  *    una sola vez y acumula sus roles; el DNI es la identidad.
- *  - Email institucional DNI@reyschool.edu.pe y contrasena = DNI, igual que
+ *  - Email institucional DNI@ras.edu.pe y contrasena = DNI, igual que
  *    el resto de seeders del proyecto.
  *  - Solo el personal que dicta clases entra a la tabla `docentes`; el resto
  *    queda como usuario con su rol, como hacen DirectorSeeder y SecretariaSeeder.
  */
-class PersonalRealSchoolSeeder extends Seeder
+class PersonalRasSeeder extends Seeder
 {
     public function run(): void
     {
@@ -42,7 +42,7 @@ class PersonalRealSchoolSeeder extends Seeder
         // con una clave aleatoria y queda sin acceso hasta que el colegio
         // complete el documento.
         $email = $dni
-            ? $dni . '@reyschool.edu.pe'
+            ? $dni . '@ras.edu.pe'
             : $data['email_alterno'];
 
         $password = $dni ?: Str::random(40);
@@ -112,7 +112,7 @@ class PersonalRealSchoolSeeder extends Seeder
      * Una fila por persona real del Excel.
      *
      * No se cargan dos filas que no corresponden a personas: el "CORREO
-     * INSTITUCIONAL" (realschoolcam777@gmail.com) y el "CONVENIO PSICOLOGICO"
+     * INSTITUCIONAL" (contacto@ras.edu.pe) y el "CONVENIO PSICOLOGICO"
      * (telefono 953272829).
      */
     private function personal(): array
@@ -258,7 +258,7 @@ class PersonalRealSchoolSeeder extends Seeder
                 // ni apellidos: entra sin acceso hasta que el colegio complete.
                 'nombres' => 'Roxana', 'apellidos' => '(apellidos por completar)',
                 'dni' => null, 'telefono' => '970007099',
-                'email_alterno' => 'especialista.ugel@reyschool.edu.pe',
+                'email_alterno' => 'especialista.ugel@ras.edu.pe',
                 'especialidad' => 'Especialista UGEL', 'ensena' => false,
                 'roles' => ['EspecialistaUGEL'],
             ],

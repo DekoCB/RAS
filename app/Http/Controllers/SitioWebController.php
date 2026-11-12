@@ -21,7 +21,7 @@ class SitioWebController extends Controller
 {
     public function inicio(): View
     {
-        $institucion = Institucion::first() ?? new Institucion(['nombre' => 'Real School']);
+        $institucion = Institucion::first() ?? new Institucion(['nombre' => 'R.A.S']);
 
         // Campana de admision publicada: define si el bloque de pre-inscripcion
         // invita a postular o solo muestra los datos de contacto.
@@ -57,7 +57,7 @@ class SitioWebController extends Controller
             ->map(fn ($archivo) => 'images/galeria/' . $archivo->getFilename())
             ->values();
 
-        // Videos institucionales publicados en TikTok (@realschool). Se
+        // Videos institucionales publicados en TikTok (@ras). Se
         // incrustan con el embed oficial de TikTok en vez de subir el
         // archivo de video al servidor.
         $videosTiktok = [

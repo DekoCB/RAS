@@ -203,6 +203,6 @@ class PreinscripcionController extends Controller
 
     private function institucion(): Institucion
     {
-        return Institucion::first() ?? new Institucion(['nombre' => 'Real School']);
+        return Institucion::first() ?? new Institucion(['nombre' => 'R.A.S']);
     }
 }

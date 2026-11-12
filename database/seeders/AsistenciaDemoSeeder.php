@@ -21,7 +21,7 @@ class AsistenciaDemoSeeder extends Seeder
             return;
         }
 
-        $docente = User::where('email', 'docente@reyschool.test')->first()
+        $docente = User::where('email', 'docente@ras.test')->first()
             ?? User::first();
 
         $secciones = Seccion::where('anio_escolar_id', $anio->id)

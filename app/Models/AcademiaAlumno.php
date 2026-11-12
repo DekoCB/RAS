@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * MODULO 10 - Real Academia (RF-52 a RF-55).
+ * MODULO 10 - Academia R.A.S (RF-52 a RF-55).
  *
  * Un alumno regular es estudiante del colegio y se enlaza a `estudiantes`;
  * un estudiante libre es externo y guarda aqui sus propios datos. RF-54
