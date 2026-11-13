@@ -21,8 +21,8 @@
     <meta name="description" content="@yield('meta', 'Preinscripción en línea para el proceso de admisión.')">
     <meta name="robots" content="@yield('robots', 'index,follow')">
 
-    <link rel="icon" type="image/png" href="{{ url('images/favicon-ras.png') }}">
-    <link rel="apple-touch-icon" href="{{ url('images/favicon-ras.png') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url('images/logo-ras.svg') }}">
+    <link rel="apple-touch-icon" href="{{ url('images/logo-ras.svg') }}">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="stylesheet"

@@ -1,13 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="R.A.S">
   <title>R.A.S</title>
-  <circle cx="256" cy="256" r="256" fill="#60282b"/>
-  <path d="M256 70 L400 118 V250 C400 340 340 400 256 442 C172 400 112 340 112 250 V118 Z" fill="#fff"/>
-  <path d="M256 86 L386 128 V250 C386 330 332 386 256 426 C180 386 126 330 126 250 V128 Z" fill="#0f1742"/>
-  <path d="M256 86 L256 426 C180 386 126 330 126 250 V128 Z" fill="none"/>
-  <path d="M140 140 L244 106 V246 H140 Z" fill="#e83222"/>
-  <path d="M268 266 H372 V250 C372 322 326 370 268 404 Z" fill="#e83222"/>
-  <path d="M268 106 L372 140 V246 H268 Z" fill="#0f1742"/>
-  <path d="M140 266 H244 V404 C186 370 140 322 140 250 Z" fill="#0f1742"/>
-  <text x="192" y="212" font-family="Georgia,serif" font-size="96" font-weight="700" fill="#fff" text-anchor="middle">R</text>
-  <text x="320" y="372" font-family="Georgia,serif" font-size="96" font-weight="700" fill="#fff" text-anchor="middle">A</text>
+  <defs>
+    <clipPath id="ras-shield"><path d="M256 74 L424 118 V262 C424 352 352 414 256 456 C160 414 88 352 88 262 V118 Z"/></clipPath>
+  </defs>
+  <!-- escudo: borde blanco, marco azul marino -->
+  <path d="M256 56 L440 104 V262 C440 362 362 430 256 476 C150 430 72 362 72 262 V104 Z" fill="#fff"/>
+  <path d="M256 74 L424 118 V262 C424 352 352 414 256 456 C160 414 88 352 88 262 V118 Z" fill="#0f1742"/>
+  <g clip-path="url(#ras-shield)">
+    <!-- cuartos -->
+    <rect x="104" y="100" width="144" height="156" fill="#e83222"/>
+    <rect x="264" y="100" width="160" height="156" fill="#0f1742"/>
+    <rect x="104" y="272" width="144" height="200" fill="#0f1742"/>
+    <rect x="264" y="272" width="160" height="200" fill="#e83222"/>
+  </g>
+  <!-- cruz blanca -->
+  <rect x="248" y="86" width="16" height="380" fill="#fff"/>
+  <rect x="88" y="256" width="336" height="16" fill="#fff"/>
+  <!-- marco fino interior -->
+  <path d="M256 74 L424 118 V262 C424 352 352 414 256 456 C160 414 88 352 88 262 V118 Z" fill="none" stroke="#fff" stroke-width="6"/>
+  <text x="176" y="214" font-family="Georgia,'Times New Roman',serif" font-size="110" font-weight="700" fill="#fff" text-anchor="middle">R</text>
+  <text x="344" y="376" font-family="Georgia,'Times New Roman',serif" font-size="110" font-weight="700" fill="#fff" text-anchor="middle">A</text>
 </svg>

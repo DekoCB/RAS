@@ -53,7 +53,7 @@
                         </div>
                     @else
                         <div class="sw-wizard__banner sw-wizard__banner--dibujado">
-                            <img class="sw-wizard__escudo" src="{{ url('images/logo-ras.png') }}"
+                            <img class="sw-wizard__escudo" src="{{ url('images/logo-ras.svg') }}"
                                 alt="{{ $institucion->nombre ?: 'R.A.S' }}">
                             <span class="sw-wizard__banner-text">
                                 <strong>Admision {{ $anio }}</strong>

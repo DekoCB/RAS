@@ -29,8 +29,8 @@
     <meta name="description"
         content="{{ $institucion->lema ?: 'Educación integral con formación en valores.' }}">
 
-    <link rel="icon" type="image/png" href="{{ url('images/favicon-ras.png') }}">
-    <link rel="apple-touch-icon" href="{{ url('images/favicon-ras.png') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url('images/logo-ras.svg') }}">
+    <link rel="apple-touch-icon" href="{{ url('images/logo-ras.svg') }}">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="stylesheet"
@@ -712,7 +712,7 @@
                     </div>
                 @else
                     <div class="sw-modal__banner sw-modal__banner--dibujado">
-                        <img class="sw-modal__escudo" src="{{ url('images/logo-ras.png') }}" alt="{{ $nombre }}">
+                        <img class="sw-modal__escudo" src="{{ url('images/logo-ras.svg') }}" alt="{{ $nombre }}">
                         <h2 class="sw-modal__anio serif">Admisión {{ $campanaAdmision->nombre }}</h2>
                         <p class="sw-modal__lema">{{ $institucion->lema ?: 'Formando líderes íntegros' }}</p>
                     </div>

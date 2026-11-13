@@ -2,15 +2,12 @@
 
 @php
     // Se prefiere el archivo real si existe; si no, cae al escudo SVG.
-    // Basta con dejar el logo en public/images/logo-real-school.png para reemplazarlo.
+    // Basta con dejar el logo en public/images/logo-ras.svg para reemplazarlo.
     $candidatos = [
-        'images/logo-real-school.png',
-        'images/logo-real-school.webp',
-        'images/logo-real-school.jpg',
-        'images/logo-real-school.svg',
+        'images/logo-ras.svg',
     ];
 
-    $ruta = 'images/logo-real-school.svg';
+    $ruta = 'images/logo-ras.svg';
     foreach ($candidatos as $candidato) {
         if (is_file(public_path($candidato))) {
             $ruta = $candidato;

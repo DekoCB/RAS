@@ -23,7 +23,7 @@
 
             {{-- Membrete: solo aparece en el papel --}}
             <header class="sw-doc__membrete">
-                <img src="{{ url('images/logo-ras.png') }}" alt="{{ $nombreColegio }}">
+                <img src="{{ url('images/logo-ras.svg') }}" alt="{{ $nombreColegio }}">
                 <div class="sw-doc__membrete-texto">
                     <strong>{{ $nombreColegio }}</strong>
                     <span>{{ $bajoMembrete }}</span>
