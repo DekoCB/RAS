@@ -411,7 +411,7 @@ body.auth-body {
 }
 
 /* Brand dentro del formulario: oculto en desktop, visible en tablet/movil */
-.auth-brand--mobile {
+.auth-brand.auth-brand--mobile {
   display: none;
 }
 
@@ -435,7 +435,7 @@ body.auth-body {
     gap: 18px;
   }
 
-  .auth-brand--mobile {
+  .auth-brand.auth-brand--mobile {
     display: inline-flex;
     color: var(--ink-900);
     margin-bottom: 4px;
